@@ -19,11 +19,9 @@ package info.hersche.document.metadata.api;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Iterator;
 import java.util.UUID;
 
 import javax.cache.Cache;
-import javax.cache.Cache.Entry;
 import javax.cache.CacheManager;
 
 import org.slf4j.Logger;
@@ -56,10 +54,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 /**
- * 
- */
-/**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @RestController

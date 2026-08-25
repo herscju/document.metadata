@@ -32,7 +32,7 @@ import waffle.windows.auth.PrincipalFormat;
 import waffle.windows.auth.impl.WindowsAuthProviderImpl;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 public class WaffleConfiguration

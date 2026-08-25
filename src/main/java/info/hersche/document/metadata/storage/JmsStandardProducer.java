@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 import info.hersche.document.metadata.model.FileMessage;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Service
 @PropertySource("classpath:./custom.properties")

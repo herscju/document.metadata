@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.AviMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class AviMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

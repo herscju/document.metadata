@@ -31,7 +31,7 @@ import org.springframework.stereotype.Controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Controller
 public class WebSocketSendToUserController

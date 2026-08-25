@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.KodakMakerNoteMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class KodakMakerNoteMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

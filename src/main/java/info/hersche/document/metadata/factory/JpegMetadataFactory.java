@@ -25,7 +25,7 @@ import org.apache.commons.imaging.ImagingException;
 import org.apache.commons.imaging.formats.jpeg.JpegImageMetadata;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class JpegMetadataFactory implements MetadataFactory
 {

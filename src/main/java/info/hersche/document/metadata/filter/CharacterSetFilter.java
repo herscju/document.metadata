@@ -31,8 +31,7 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 
 /**
- * @author herscju
- *
+ * @author Jürg Hersche (herscju)
  */
 @Component
 public class CharacterSetFilter extends GenericFilterBean

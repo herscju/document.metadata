@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.JfxxMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class JfxxMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

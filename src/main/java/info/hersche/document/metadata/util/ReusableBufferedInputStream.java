@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class ReusableBufferedInputStream extends InputStream
 {

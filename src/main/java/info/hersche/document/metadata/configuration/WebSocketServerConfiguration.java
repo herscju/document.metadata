@@ -45,7 +45,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import info.hersche.document.metadata.handler.WebSocketServerHandler;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @EnableWebSocket

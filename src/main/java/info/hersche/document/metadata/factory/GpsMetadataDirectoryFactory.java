@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.GpsMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class GpsMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

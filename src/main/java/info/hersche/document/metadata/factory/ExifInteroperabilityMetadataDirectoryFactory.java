@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.ExifInteroperabilityMetadataDirec
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class ExifInteroperabilityMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

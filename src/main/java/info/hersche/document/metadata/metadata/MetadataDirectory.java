@@ -26,7 +26,7 @@ import com.drew.metadata.Directory;
 import info.hersche.document.metadata.model.Detail;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public interface MetadataDirectory
 {

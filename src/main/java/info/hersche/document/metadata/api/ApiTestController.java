@@ -29,7 +29,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.simp.stomp.StompSessionHandler;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -39,18 +38,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import info.hersche.document.metadata.certificate.CertificateLoadable;
-import info.hersche.document.metadata.certificate.CertificateLoader;
-import info.hersche.document.metadata.client.StompClient;
 import info.hersche.document.metadata.configuration.ApiKeyProperties;
 import info.hersche.document.metadata.configuration.HostsProperties;
 import info.hersche.document.metadata.configuration.TlsEncryptionProperties;
-import info.hersche.document.metadata.configuration.WebSocketServerConfiguration;
-import info.hersche.document.metadata.handler.CertificateStompSessionHandler;
-import info.hersche.document.metadata.handler.ProcessorStompSessionHandler;
-import info.hersche.document.metadata.image.MultiMediaImpl;
-import info.hersche.document.metadata.storage.MultiMedia;
-import info.hersche.document.metadata.util.PortUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.Consumes;
@@ -58,10 +48,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 /**
- * 
- */
-/**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @RestController

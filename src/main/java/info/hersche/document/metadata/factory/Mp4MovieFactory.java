@@ -38,7 +38,7 @@ import info.hersche.document.metadata.processor.MetaDataWriteable;
 import info.hersche.document.metadata.processor.Mp4MetaDataWriter;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class Mp4MovieFactory implements MediaFactory
 {

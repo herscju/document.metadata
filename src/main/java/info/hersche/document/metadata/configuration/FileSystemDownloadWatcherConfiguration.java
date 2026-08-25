@@ -36,7 +36,7 @@ import info.hersche.document.metadata.storage.DownloadWatcherProperties;
 import jakarta.annotation.PreDestroy;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @EnableConfigurationProperties({ HostsProperties.class, DownloadWatcherProperties.class, TlsEncryptionProperties.class })

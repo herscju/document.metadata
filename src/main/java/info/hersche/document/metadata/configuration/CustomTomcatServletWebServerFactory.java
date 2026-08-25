@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  *
  */
 public class CustomTomcatServletWebServerFactory extends TomcatServletWebServerFactory

@@ -23,7 +23,7 @@ import org.apache.commons.imaging.formats.tiff.TiffImageMetadata;
 import org.apache.commons.imaging.formats.tiff.write.TiffOutputSet;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class ImageMetaData
 {

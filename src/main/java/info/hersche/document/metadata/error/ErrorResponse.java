@@ -31,7 +31,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  *
  */
 @Getter

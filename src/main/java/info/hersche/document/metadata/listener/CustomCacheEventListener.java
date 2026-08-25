@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class CustomCacheEventListener<K, V> implements CacheEventListener<K, V>
 {

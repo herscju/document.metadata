@@ -25,7 +25,7 @@ import org.apache.commons.imaging.formats.tiff.taginfos.TagInfoAscii;
 import org.apache.commons.imaging.formats.tiff.taginfos.TagInfoBytes;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public interface MetaDataWriteable
 {

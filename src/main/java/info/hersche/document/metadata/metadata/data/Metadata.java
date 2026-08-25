@@ -17,7 +17,7 @@
 package info.hersche.document.metadata.metadata.data;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class Metadata
 {

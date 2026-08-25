@@ -17,7 +17,7 @@
 package info.hersche.document.metadata.storage;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class StorageFileNotFoundException extends StorageException
 {

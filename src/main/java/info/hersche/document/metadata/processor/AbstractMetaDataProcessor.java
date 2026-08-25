@@ -39,7 +39,7 @@ import info.hersche.document.metadata.storage.MultiMedia;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public abstract class AbstractMetaDataProcessor
 {

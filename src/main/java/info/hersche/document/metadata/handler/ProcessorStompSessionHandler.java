@@ -66,7 +66,7 @@ import lombok.Setter;
  * 
  * See also 'https://www.baeldung.com/spring-websockets-send-message-to-user' and 'https://stackoverflow.com/a/74783052/6487382'
  * 
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Component
 public class ProcessorStompSessionHandler extends StompSessionHandlerAdapter

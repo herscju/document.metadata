@@ -56,7 +56,7 @@ import info.hersche.document.metadata.processor.ProcessImageMetaDataProcessor;
 import info.hersche.document.metadata.util.NetWorkUtil;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class AddFileChangeListener implements FileChangeListener
 {

@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.MetadataDirectory;
 import info.hersche.document.metadata.metadata.NikonMakerNoteMetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class NikonMakerNoteMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

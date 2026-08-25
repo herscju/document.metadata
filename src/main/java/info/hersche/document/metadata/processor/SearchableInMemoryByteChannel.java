@@ -27,7 +27,7 @@ import java.nio.channels.NonWritableChannelException;
 import org.apache.commons.compress.utils.SeekableInMemoryByteChannel;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class SearchableInMemoryByteChannel extends SeekableInMemoryByteChannel
 {

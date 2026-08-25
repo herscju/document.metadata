@@ -22,7 +22,7 @@ import java.security.cert.X509Certificate;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class SaveTrustManager implements X509TrustManager
 {

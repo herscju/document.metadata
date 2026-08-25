@@ -40,7 +40,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Component
 @PropertySource("classpath:./custom.properties")

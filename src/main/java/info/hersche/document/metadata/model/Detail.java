@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @JsonDeserialize(as = MetadataDetail.class)
 public interface Detail

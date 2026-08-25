@@ -35,7 +35,7 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Controller
 public class FaultController extends MainController implements ErrorController
@@ -45,9 +45,6 @@ public class FaultController extends MainController implements ErrorController
 	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(FaultController.class);
 
-	/**
-	 * 
-	 */
 	@Autowired
 	private PageText pageText;
 

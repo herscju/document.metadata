@@ -23,7 +23,7 @@ import info.hersche.document.metadata.storage.MultiMedia;
 import lombok.Getter;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class ReceiveImageEvent
 {

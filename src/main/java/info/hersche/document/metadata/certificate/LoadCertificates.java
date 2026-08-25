@@ -37,7 +37,7 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class LoadCertificates
 {

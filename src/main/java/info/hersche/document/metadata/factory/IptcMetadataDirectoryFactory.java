@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.IptcMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class IptcMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

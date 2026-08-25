@@ -46,7 +46,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  *
  */
 @Configuration

@@ -23,7 +23,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public interface StorageServiceable
 {

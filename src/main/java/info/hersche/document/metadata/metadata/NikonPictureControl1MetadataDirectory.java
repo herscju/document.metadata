@@ -27,7 +27,7 @@ import com.drew.metadata.DirectoryNames;
 import info.hersche.document.metadata.model.Detail;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class NikonPictureControl1MetadataDirectory extends AbstractDirectory implements MetadataDirectory
 {

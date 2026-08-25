@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.validation.constraints.NotBlank;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @JsonSerialize
 @ConfigurationProperties(prefix = "application.keys")

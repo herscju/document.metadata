@@ -31,7 +31,7 @@ import info.hersche.document.metadata.model.OutputMessage;
 import info.hersche.document.metadata.storage.MultiMedia;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class CertificateStompSessionHandler extends StompSessionHandlerAdapter
 {

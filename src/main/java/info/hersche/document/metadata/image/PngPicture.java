@@ -77,7 +77,7 @@ import info.hersche.document.metadata.model.OutputImageMetadataMessage.OutputIma
 import info.hersche.document.metadata.model.SourceImageFormat;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class PngPicture implements Picture
 {

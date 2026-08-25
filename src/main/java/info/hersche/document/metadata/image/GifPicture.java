@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 import info.hersche.document.metadata.model.OutputImageMetadataMessage;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class GifPicture implements Picture
 {

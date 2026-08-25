@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.MetadataDirectory;
 import info.hersche.document.metadata.metadata.OlympusFocusMakerNoteMetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class OlympusFocusMakerNoteMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

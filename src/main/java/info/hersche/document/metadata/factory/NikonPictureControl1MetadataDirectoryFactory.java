@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.MetadataDirectory;
 import info.hersche.document.metadata.metadata.NikonPictureControl1MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class NikonPictureControl1MetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

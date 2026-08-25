@@ -62,7 +62,7 @@ import info.hersche.document.metadata.util.NumberUtil;
 import io.hawt.util.Files;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class Mp4Writer implements Mp4Writeable
 {

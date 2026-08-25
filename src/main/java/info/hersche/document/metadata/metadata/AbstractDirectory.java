@@ -49,7 +49,7 @@ import info.hersche.document.metadata.model.Detail;
 import info.hersche.document.metadata.model.MetadataDetail;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public abstract class AbstractDirectory implements MetadataDirectory
 {

@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.KyoceraMakerNoteMetadataDirectory
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class KyoceraMakerNoteMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

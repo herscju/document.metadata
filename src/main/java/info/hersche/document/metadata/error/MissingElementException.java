@@ -25,7 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * 
  * @see MissingElementsException
  * 
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @ProviderType
 public class MissingElementException extends RuntimeException

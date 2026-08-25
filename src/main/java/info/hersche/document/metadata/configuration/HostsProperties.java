@@ -22,7 +22,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @ConfigurationProperties(prefix = "application.hosts.host")
 public record HostsProperties(@NotBlank String protocol, @NotBlank String name, @Positive Integer port, @NotBlank String wiki)

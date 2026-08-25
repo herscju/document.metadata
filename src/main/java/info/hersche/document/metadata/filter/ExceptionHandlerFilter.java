@@ -34,7 +34,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  *
  *         Annotation '@Component' not required. Registration is done manually.
  */

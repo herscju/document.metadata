@@ -58,10 +58,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 /**
- * 
- */
-/**
- * 
+ * @author Jürg Hersche (herscju) 
  */
 @Configuration
 @RestController

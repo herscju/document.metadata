@@ -21,7 +21,7 @@ import java.util.Comparator;
 import java.util.Map;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class MapValueKeyComparator<K extends Comparable<? super K>, V extends Comparable<? super V>> implements Comparator<Map.Entry<K, V>>
 {

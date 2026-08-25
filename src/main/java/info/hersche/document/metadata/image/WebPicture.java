@@ -18,13 +18,9 @@ package info.hersche.document.metadata.image;
 
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
-import java.util.stream.Collectors;
 
 import org.apache.commons.imaging.ImagingException;
 import org.slf4j.Logger;
@@ -33,7 +29,7 @@ import org.slf4j.LoggerFactory;
 import info.hersche.document.metadata.model.OutputImageMetadataMessage;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class WebPicture implements Picture
 {

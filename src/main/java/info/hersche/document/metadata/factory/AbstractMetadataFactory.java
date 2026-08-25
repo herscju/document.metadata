@@ -21,7 +21,7 @@ import java.util.Set;
 import com.drew.metadata.DirectoryNames;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class AbstractMetadataFactory
 {

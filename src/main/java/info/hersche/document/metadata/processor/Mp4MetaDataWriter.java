@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
 import info.hersche.document.metadata.factory.AbstractDocumentFactory.Extension;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class Mp4MetaDataWriter implements MetaDataWriteable
 {

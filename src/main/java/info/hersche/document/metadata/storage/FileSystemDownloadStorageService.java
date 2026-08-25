@@ -35,7 +35,7 @@ import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Service
 public class FileSystemDownloadStorageService implements StorageServiceable

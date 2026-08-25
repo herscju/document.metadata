@@ -27,7 +27,7 @@ import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.listener.DataListener;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class SocketIOBinaryEventListener<T> implements DataListener<T>
 {

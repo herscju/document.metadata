@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.MetadataDirectory;
 import info.hersche.document.metadata.metadata.PanasonicRawWbInfo1MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class PanasonicRawWbInfo1MetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

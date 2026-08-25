@@ -34,7 +34,7 @@ import info.hersche.document.metadata.filter.ExceptionHandlerFilter;
 import info.hersche.document.metadata.model.PageText;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 public class CustomConfiguration

@@ -34,7 +34,7 @@ import info.hersche.document.metadata.model.ChatMessage;
 import info.hersche.document.metadata.model.OutputMessage;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  * 
  *         See 'https://www.baeldung.com/spring-websockets-send-message-to-user'
  */

@@ -22,7 +22,7 @@ import info.hersche.document.metadata.model.Action;
 import info.hersche.document.metadata.storage.MultiMedia;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public interface MetaDataProcessable
 {

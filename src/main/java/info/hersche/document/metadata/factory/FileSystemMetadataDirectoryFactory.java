@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.FileSystemMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class FileSystemMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

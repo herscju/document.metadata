@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.FujiFilmMakerNoteMetadataDirector
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class FujiFilmMakerNoteMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

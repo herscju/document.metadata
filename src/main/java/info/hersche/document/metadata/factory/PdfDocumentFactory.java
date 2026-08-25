@@ -41,7 +41,7 @@ import info.hersche.document.metadata.image.PngPicture;
 import info.hersche.document.metadata.processor.MetaDataWriteable;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class PdfDocumentFactory implements MediaFactory
 {

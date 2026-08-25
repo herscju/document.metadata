@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.BmpMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class BmpMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

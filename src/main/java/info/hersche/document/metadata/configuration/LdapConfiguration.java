@@ -26,7 +26,7 @@ import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.LdapContextSource;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @EnableLdapRepositories

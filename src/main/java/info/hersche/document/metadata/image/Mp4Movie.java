@@ -60,7 +60,7 @@ import info.hersche.document.metadata.model.OutputImageMetadataMessage;
 import info.hersche.document.metadata.model.OutputImageMetadataMessage.OutputImageMetadataMessageBuilder;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class Mp4Movie implements Picture
 {

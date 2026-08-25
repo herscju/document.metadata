@@ -41,7 +41,7 @@ import info.hersche.document.metadata.storage.MultiMedia;
 import jakarta.annotation.PreDestroy;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  *
  */
 @Component

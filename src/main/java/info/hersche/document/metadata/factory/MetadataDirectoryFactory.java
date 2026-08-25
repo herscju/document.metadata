@@ -19,7 +19,7 @@ package info.hersche.document.metadata.factory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public interface MetadataDirectoryFactory
 {

@@ -22,7 +22,7 @@ import info.hersche.document.metadata.processor.Mp4Writer.BetterByteArrayOutputS
 import jakarta.validation.constraints.NotNull;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public interface Mp4Processable
 {

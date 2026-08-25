@@ -45,7 +45,7 @@ import info.hersche.document.metadata.listener.CustomCacheEventListener;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @EnableCaching

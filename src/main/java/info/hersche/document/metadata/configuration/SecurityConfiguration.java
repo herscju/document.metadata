@@ -50,7 +50,7 @@ import waffle.spring.NegotiateSecurityFilterEntryPoint;
 import waffle.spring.WindowsAuthenticationProvider;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @EnableWebSecurity

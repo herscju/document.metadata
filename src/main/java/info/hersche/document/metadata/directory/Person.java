@@ -28,7 +28,7 @@ import lombok.Data;
 import lombok.ToString;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Data
 @Entry(base = "CN=Users,DC=hersche,DC=name", objectClasses = { "organizationalPerson", "person", "user", "top" })

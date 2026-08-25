@@ -23,7 +23,7 @@ import java.nio.file.Path;
 import org.apache.commons.imaging.ImagingException;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class PngMetadataFactory implements MetadataFactory
 {

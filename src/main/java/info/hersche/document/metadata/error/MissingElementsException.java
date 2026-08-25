@@ -22,7 +22,7 @@ import java.util.Collection;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @ProviderType
 public class MissingElementsException extends RuntimeException

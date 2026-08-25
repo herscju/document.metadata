@@ -17,7 +17,7 @@
 package info.hersche.document.metadata.certificate;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public interface CertificateLoadable
 {

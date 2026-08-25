@@ -23,10 +23,9 @@ import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.ConnectListener;
 
 /**
- *  @author herscju
+ * @author Jürg Hersche (herscju)
  */
-public class SocketIOConnectionListener implements ConnectListener
-{
+public class SocketIOConnectionListener implements ConnectListener {
 	/**
 	 * Initialise logger
 	 */
@@ -35,8 +34,7 @@ public class SocketIOConnectionListener implements ConnectListener
 	/**
 	 * Default constructor
 	 */
-	public SocketIOConnectionListener()
-	{
+	public SocketIOConnectionListener() {
 		// Nothing to do here
 	}
 
@@ -44,8 +42,7 @@ public class SocketIOConnectionListener implements ConnectListener
 	 *
 	 */
 	@Override
-	public void onConnect(SocketIOClient client)
-	{
+	public void onConnect(SocketIOClient client) {
 		LOGGER.trace("New user connected with socket '{}' ('{}').", client.getSessionId(), client.getRemoteAddress());
 	}
 }

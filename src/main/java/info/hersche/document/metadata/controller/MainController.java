@@ -45,7 +45,7 @@ import info.hersche.document.metadata.model.PageText;
 import jakarta.servlet.http.HttpServletRequest;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  *
  */
 @Configuration

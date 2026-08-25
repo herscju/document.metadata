@@ -22,7 +22,7 @@ import java.io.IOException;
 import info.hersche.document.metadata.processor.Mp4Writer.Tag;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public interface Mp4Writeable
 {

@@ -21,7 +21,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import jakarta.validation.constraints.NotBlank;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @ConfigurationProperties("application.file.upload")
 public record UploadStorageProperties(@NotBlank String directory)

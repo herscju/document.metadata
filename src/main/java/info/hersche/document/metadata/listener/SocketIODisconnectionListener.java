@@ -23,7 +23,7 @@ import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.DisconnectListener;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class SocketIODisconnectionListener implements DisconnectListener
 {

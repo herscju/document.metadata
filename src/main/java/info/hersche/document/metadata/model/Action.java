@@ -21,11 +21,11 @@ import java.util.Arrays;
 import lombok.Getter;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public enum Action {
-					UPLOAD("Upload"),
-					DOWNLOAD("Download"),
+					UPLOAD("Upload"), //
+					DOWNLOAD("Download"), //
 					MEMORY("Memory");
 
 	/**

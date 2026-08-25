@@ -24,8 +24,7 @@ import org.apache.tika.Tika;
 import info.hersche.document.metadata.factory.AbstractDocumentFactory.Extension;
 
 /**
- * @author herscju
- *
+ * @author Jürg Hersche (herscju)
  */
 public class NetWorkUtil
 {

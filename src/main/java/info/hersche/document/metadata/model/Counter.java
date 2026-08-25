@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 import lombok.ToString;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Component
 @ToString

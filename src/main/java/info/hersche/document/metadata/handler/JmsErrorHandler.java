@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ErrorHandler;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Service
 public class JmsErrorHandler implements ErrorHandler

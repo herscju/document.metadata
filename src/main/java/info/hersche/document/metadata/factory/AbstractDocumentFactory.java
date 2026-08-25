@@ -44,12 +44,11 @@ import org.w3c.dom.Document;
 import info.hersche.document.metadata.util.NetWorkUtil;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class AbstractDocumentFactory
 {
 	/**
-	 * @author herscju
 	 *
 	 */
 	public enum Extension {
@@ -184,7 +183,7 @@ public class AbstractDocumentFactory
 	}
 
 	/**
-	 * @author herscju
+	 * @author Jürg Hersche (herscju)
 	 *
 	 */
 	public enum Label {

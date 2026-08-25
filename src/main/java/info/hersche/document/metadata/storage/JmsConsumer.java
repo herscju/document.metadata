@@ -41,7 +41,7 @@ import info.hersche.document.metadata.model.FileMessage;
 import jakarta.jms.Session;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Service
 public class JmsConsumer

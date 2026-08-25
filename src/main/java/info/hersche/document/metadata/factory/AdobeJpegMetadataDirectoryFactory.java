@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.AdobeJpegMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class AdobeJpegMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

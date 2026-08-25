@@ -22,7 +22,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class ServletInitializer extends SpringBootServletInitializer
 {

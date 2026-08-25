@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.AppleRuntimeMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class AppleRuntimeMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

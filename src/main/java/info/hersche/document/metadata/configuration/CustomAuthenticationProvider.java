@@ -39,7 +39,7 @@ import waffle.windows.auth.IWindowsIdentity;
 import waffle.windows.auth.PrincipalFormat;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  *
  */
 @Component

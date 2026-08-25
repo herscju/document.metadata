@@ -62,7 +62,10 @@ import info.hersche.document.metadata.util.NumberUtil;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * https://github.com/sannies/mp4parser/blob/master/examples/src/main/java/org/mp4parser/examples/metadata/MetaDataInsert.java
+ * @author Jürg Hersche (herscju)
+ * 
+ * See
+ * 			https://github.com/sannies/mp4parser/blob/master/examples/src/main/java/org/mp4parser/examples/metadata/MetaDataInsert.java
  */
 public class Mp4WriterExample
 {

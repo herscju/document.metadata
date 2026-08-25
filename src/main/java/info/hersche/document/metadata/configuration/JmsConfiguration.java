@@ -40,7 +40,7 @@ import info.hersche.document.metadata.handler.JmsErrorHandler;
 import info.hersche.document.metadata.model.FileMessage;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @EnableJms
 @Configuration

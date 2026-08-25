@@ -68,7 +68,7 @@ import io.socket.emitter.Emitter;
 import lombok.Getter;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Component
 @PropertySource("classpath:./custom.properties")

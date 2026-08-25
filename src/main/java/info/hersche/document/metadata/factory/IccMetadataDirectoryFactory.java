@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.IccMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class IccMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

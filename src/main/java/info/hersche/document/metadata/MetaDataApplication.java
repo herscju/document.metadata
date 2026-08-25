@@ -43,7 +43,7 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @SpringBootApplication
 @EnableCaching

@@ -17,7 +17,7 @@
 package info.hersche.document.metadata.image;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public abstract class AbstractPicture
 {

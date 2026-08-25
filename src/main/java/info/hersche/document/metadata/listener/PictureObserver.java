@@ -24,7 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class PictureObserver implements ImageObserver
 {

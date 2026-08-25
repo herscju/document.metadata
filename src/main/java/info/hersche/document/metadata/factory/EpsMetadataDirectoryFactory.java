@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.EpsMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class EpsMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

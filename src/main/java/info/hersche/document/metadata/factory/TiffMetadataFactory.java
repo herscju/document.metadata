@@ -25,7 +25,7 @@ import org.apache.commons.imaging.ImagingException;
 import org.apache.commons.imaging.formats.tiff.TiffImageMetadata;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class TiffMetadataFactory implements MetadataFactory
 {

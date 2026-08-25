@@ -52,7 +52,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  * 
  *         See
  *         'https://techgig365.wordpress.com/2020/07/13/download-certificates-from-url-java-example/',

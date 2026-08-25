@@ -31,7 +31,7 @@ import org.springframework.web.socket.messaging.StompSubProtocolErrorHandler;
 import info.hersche.document.metadata.handler.ProcessorStompSubProtocolErrorHandler;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Configuration
 @EnableWebSocketMessageBroker

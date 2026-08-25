@@ -26,7 +26,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Setter
 @Getter

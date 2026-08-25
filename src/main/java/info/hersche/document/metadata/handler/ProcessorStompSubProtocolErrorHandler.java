@@ -23,7 +23,7 @@ import org.springframework.messaging.MessageDeliveryException;
 import org.springframework.web.socket.messaging.StompSubProtocolErrorHandler;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class ProcessorStompSubProtocolErrorHandler extends StompSubProtocolErrorHandler
 {

@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.ExifIdf0MetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class ExifIdf0MetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

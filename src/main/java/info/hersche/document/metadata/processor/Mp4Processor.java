@@ -31,7 +31,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Setter;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class Mp4Processor implements Mp4Processable
 {

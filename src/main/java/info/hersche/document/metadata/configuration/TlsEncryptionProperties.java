@@ -21,7 +21,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import jakarta.validation.constraints.NotBlank;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @ConfigurationProperties(prefix = "server.ssl")
 public record TlsEncryptionProperties(@NotBlank String keyStoreType, @NotBlank String keyStore, @NotBlank String keyStorePassword, @NotBlank String keyAlias,

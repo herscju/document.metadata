@@ -29,7 +29,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 @Component
 @ToString

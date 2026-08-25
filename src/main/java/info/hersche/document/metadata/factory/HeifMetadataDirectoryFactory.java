@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.HeifMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class HeifMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

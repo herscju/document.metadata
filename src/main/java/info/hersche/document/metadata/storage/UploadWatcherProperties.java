@@ -22,7 +22,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @ConfigurationProperties(prefix = "application.file.upload")
 public record UploadWatcherProperties(@NotBlank String directory, boolean daemon, @Positive Long pollInterval, @Positive Long quietPeriod)

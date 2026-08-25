@@ -34,7 +34,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Controller
 public class PageController extends MainController

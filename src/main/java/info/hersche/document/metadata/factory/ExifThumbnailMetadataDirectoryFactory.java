@@ -24,7 +24,7 @@ import info.hersche.document.metadata.metadata.ExifThumbnailMetadataDirectory;
 import info.hersche.document.metadata.metadata.MetadataDirectory;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class ExifThumbnailMetadataDirectoryFactory extends AbstractDirectoryFactory implements MetadataDirectoryFactory
 {

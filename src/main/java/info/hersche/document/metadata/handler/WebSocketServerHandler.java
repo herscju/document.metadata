@@ -35,7 +35,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.springframework.web.util.HtmlUtils;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class WebSocketServerHandler extends TextWebSocketHandler implements SubProtocolCapable
 {

@@ -24,7 +24,7 @@ import org.apache.commons.imaging.bytesource.ByteSource;
 import info.hersche.document.metadata.image.MultiMediaImpl.Type;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public interface MultiMedia
 {

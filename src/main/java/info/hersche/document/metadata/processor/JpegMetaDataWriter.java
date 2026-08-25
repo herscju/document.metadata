@@ -42,7 +42,7 @@ import info.hersche.document.metadata.factory.ImageMetaData;
 import info.hersche.document.metadata.factory.MetadataFactory;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class JpegMetaDataWriter implements MetaDataWriteable
 {

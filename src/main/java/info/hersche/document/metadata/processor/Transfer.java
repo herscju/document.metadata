@@ -22,7 +22,7 @@ import java.nio.channels.FileChannel;
 import lombok.Getter;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 @Getter
 public class Transfer

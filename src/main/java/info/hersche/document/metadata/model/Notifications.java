@@ -17,7 +17,7 @@
 package info.hersche.document.metadata.model;
 
 /**
- * @author herscju
+ * @author Jürg Hersche (herscju)
  */
 public class Notifications
 {

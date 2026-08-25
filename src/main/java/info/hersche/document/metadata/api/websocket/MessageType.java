@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public enum MessageType {
 							@JsonProperty("Chat")

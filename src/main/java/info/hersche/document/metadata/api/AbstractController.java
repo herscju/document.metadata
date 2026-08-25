@@ -58,7 +58,7 @@ import info.hersche.document.metadata.model.Counter;
 import info.hersche.document.metadata.util.Detector;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public abstract class AbstractController
 {
