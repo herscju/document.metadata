@@ -17,7 +17,7 @@
 package info.hersche.document.metadata.util;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class NumberUtil
 {

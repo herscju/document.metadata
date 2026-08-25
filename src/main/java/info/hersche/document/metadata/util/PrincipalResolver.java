@@ -31,7 +31,7 @@ import waffle.servlet.WindowsPrincipal;
 import waffle.spring.WindowsAuthenticationToken;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class PrincipalResolver
 {

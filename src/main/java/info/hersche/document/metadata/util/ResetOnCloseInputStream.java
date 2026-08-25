@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 
+ * @author Jürg Hersche (herscju)
  */
 public class ResetOnCloseInputStream extends InputStream
 {
