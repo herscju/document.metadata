@@ -18,4 +18,5 @@ buildNumber.properties
 =======
 /logs/
 /target/
->>>>>>> a37d16c (.gitignore added.)
+/upload/
+/download/
