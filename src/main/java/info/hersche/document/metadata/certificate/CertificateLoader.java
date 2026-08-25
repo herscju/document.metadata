@@ -1,4 +1,17 @@
 /**
+ * Copyright (c) 2024 Jürg Hersche (Green@rt)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  * 
  */
 package info.hersche.document.metadata.certificate;
@@ -15,7 +28,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.util.Date;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
@@ -42,7 +54,8 @@ import lombok.ToString;
 /**
  * @author herscju
  * 
- *         See 'https://techgig365.wordpress.com/2020/07/13/download-certificates-from-url-java-example/',
+ *         See
+ *         'https://techgig365.wordpress.com/2020/07/13/download-certificates-from-url-java-example/',
  *         'https://tty4.dev/development/spring/spring-stomp-client/' and
  *         'https://github.com/davidmoten/ssl-certificate-downloader/blob/master/src/main/java/SslCertificateDownloader.java'
  */
@@ -51,8 +64,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder(toBuilder = true, builderMethodName = "toBuilder")
-public class CertificateLoader implements CertificateLoadable
-{
+public class CertificateLoader implements CertificateLoadable {
 	/**
 	 * Initialise logger
 	 */
@@ -68,11 +80,9 @@ public class CertificateLoader implements CertificateLoadable
 	 * @param bytes
 	 * @return
 	 */
-	private static String toHexString(byte[] bytes)
-	{
+	private static String toHexString(byte[] bytes) {
 		StringBuilder sb = new StringBuilder(bytes.length * 3);
-		for (int b : bytes)
-		{
+		for (int b : bytes) {
 			b &= 0xff;
 			sb.append(HEXDIGITS[b >> 4]);
 			sb.append(HEXDIGITS[b & 15]);
@@ -97,8 +107,7 @@ public class CertificateLoader implements CertificateLoadable
 	/**
 	 * Default constructor
 	 */
-	public CertificateLoader()
-	{
+	public CertificateLoader() {
 		// Nothing to do here
 	}
 
@@ -106,16 +115,15 @@ public class CertificateLoader implements CertificateLoadable
 	 * 
 	 */
 	@Override
-	public boolean loadCertificate()
-	{
+	public boolean loadCertificate() {
 		boolean isSuccess = false;
 
-		try
-		{
+		try {
 			this.client.sendMessage(SEPARATOR_BEGIN);
 
 			SSLContext context = SSLContext.getInstance(TLS);
-			TrustManagerFactory managerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+			TrustManagerFactory managerFactory = TrustManagerFactory
+					.getInstance(TrustManagerFactory.getDefaultAlgorithm());
 			KeyStore keyStore = this.loadKeyStore();
 			managerFactory.init(keyStore);
 			X509TrustManager defaultTrustManager = (X509TrustManager) managerFactory.getTrustManagers()[0];
@@ -129,33 +137,26 @@ public class CertificateLoader implements CertificateLoadable
 			SSLSocket socket = (SSLSocket) factory.createSocket(this.host, this.port.intValue());
 			socket.setSoTimeout(10000);
 
-			try
-			{
+			try {
 				this.sendMessage("Initiating SSL/TLS handshake...");
 
 				socket.startHandshake();
 				socket.close();
 
 				this.sendMessage("Certificate is already trusted.");
-			}
-			catch (SSLException e)
-			{
+			} catch (SSLException e) {
 				this.sendErrorMessage("SSLException: An error has been occurred. Try again!", e);
 			}
 
 			X509Certificate[] chain = trustManager.getChain();
-			if (chain == null)
-			{
+			if (chain == null) {
 				this.sendErrorMessage("Could not obtain server certificate chain.", null);
-			}
-			else
-			{
+			} else {
 				this.sendMessage(String.format("Server sent '%d' certificate(s).", chain.length));
 
 				MessageDigest sha1 = MessageDigest.getInstance("SHA1");
 				MessageDigest md5 = MessageDigest.getInstance("MD5");
-				for (int i = 0; i < chain.length; i++)
-				{
+				for (int i = 0; i < chain.length; i++) {
 					X509Certificate certificate = chain[i];
 					String alias = keyStore.getCertificateAlias(certificate);
 
@@ -166,37 +167,30 @@ public class CertificateLoader implements CertificateLoadable
 					this.sendMessage(String.format("\t%02d: Serial#  %s", j, certificate.getSerialNumber()));
 					this.sendMessage(String.format("\t%02d: Version  %s", j, certificate.getVersion()));
 					this.sendMessage(String.format("\t%02d: SigAlg   %s", j, certificate.getSigAlgName()));
-					this.sendMessage(String.format("\t%02d: From/To  %s ... %s", j, certificate.getNotBefore(), certificate.getNotAfter()));
+					this.sendMessage(String.format("\t%02d: From/To  %s ... %s", j, certificate.getNotBefore(),
+							certificate.getNotAfter()));
 
 					sha1.update(certificate.getEncoded());
-					this.sendMessage(String.format("\t%02d: SHA1     %s", j, CertificateLoader.toHexString(sha1.digest())));
+					this.sendMessage(
+							String.format("\t%02d: SHA1     %s", j, CertificateLoader.toHexString(sha1.digest())));
 
 					md5.update(certificate.getEncoded());
-					this.sendMessage(String.format("\t%02d: MD5      %s", j, CertificateLoader.toHexString(md5.digest())));
+					this.sendMessage(
+							String.format("\t%02d: MD5      %s", j, CertificateLoader.toHexString(md5.digest())));
 					this.client.sendMessage(SEPARATOR_DETAIL);
 				}
 
 				isSuccess = (chain.length > 0);
 			}
-		}
-		catch (NoSuchAlgorithmException e)
-		{
+		} catch (NoSuchAlgorithmException e) {
 			this.sendErrorMessage("NoSuchAlgorithmException: An error has been occured.", e);
-		}
-		catch (KeyStoreException e)
-		{
+		} catch (KeyStoreException e) {
 			this.sendErrorMessage("KeyStoreException: An error has been occured.", e);
-		}
-		catch (CertificateException e)
-		{
+		} catch (CertificateException e) {
 			this.sendErrorMessage("CertificateException: An error has been occured.", e);
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			this.sendErrorMessage("IOException: An error has been occured.", e);
-		}
-		catch (KeyManagementException e)
-		{
+		} catch (KeyManagementException e) {
 			this.sendErrorMessage("KeyManagementException: An error has been occured.", e);
 		}
 
@@ -212,35 +206,31 @@ public class CertificateLoader implements CertificateLoadable
 	 * @throws CertificateException
 	 * @throws IOException
 	 */
-	private KeyStore loadKeyStore() throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException
-	{
+	private KeyStore loadKeyStore()
+			throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
 		KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
 		char[] passphrase = this.keyStorePassword.toCharArray();
 
-		if (this.keyStoreLocation != null)
-		{
+		if (this.keyStoreLocation != null) {
 			LOGGER.trace("Get keystore from '{}'.", this.keyStoreLocation);
 
 			// Load key store
 			Resource certificate = this.resourceLoader.getResource(this.keyStoreLocation);
 			keyStore.load(certificate.getInputStream(), passphrase);
 
-		}
-		else
-		{
+		} else {
 			File file = new File("");
 
-			if (!file.isFile())
-			{
+			if (!file.isFile()) {
 				LOGGER.error("Keystore file '{}' not found.", this.keyStoreLocation);
 
-				File dir = new File(System.getProperty("java.home") + File.separatorChar + "lib" + File.separatorChar + "security");
+				File dir = new File(
+						System.getProperty("java.home") + File.separatorChar + "lib" + File.separatorChar + "security");
 				file = new File(dir, "jssecacerts");
 
 				this.keyStoreLocation = file.getAbsolutePath();
 
-				if (!file.isFile())
-				{
+				if (!file.isFile()) {
 					LOGGER.trace("Loading default keystore...");
 					passphrase = DEFAULT_PASSPHRASE.toCharArray();
 					file = new File(dir, "cacerts");
@@ -251,8 +241,7 @@ public class CertificateLoader implements CertificateLoadable
 
 			LOGGER.trace("Get keystore from '{}'.", this.keyStoreLocation);
 
-			try (InputStream is = new FileInputStream(this.keyStoreLocation))
-			{
+			try (InputStream is = new FileInputStream(this.keyStoreLocation)) {
 				// Load key store
 				keyStore.load(is, passphrase);
 			}
@@ -265,12 +254,10 @@ public class CertificateLoader implements CertificateLoadable
 	 * @param message
 	 * @param e
 	 */
-	private void sendErrorMessage(String message, Throwable e)
-	{
+	private void sendErrorMessage(String message, Throwable e) {
 		LOGGER.error(message, (e != null) ? e.getMessage() : "");
 		StringBuilder msg = new StringBuilder(message);
-		if (e != null)
-		{
+		if (e != null) {
 			msg.append(" Details: ").append(e.getLocalizedMessage());
 		}
 		this.client.sendMessage(msg.toString());
@@ -282,8 +269,7 @@ public class CertificateLoader implements CertificateLoadable
 	/**
 	 * @param message
 	 */
-	private void sendMessage(String message)
-	{
+	private void sendMessage(String message) {
 		LOGGER.trace(message);
 		this.client.sendMessage(message);
 	}
