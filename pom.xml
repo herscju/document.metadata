@@ -149,7 +149,7 @@
 		<org.apache.xmlgraphics.commons.version>2.11</org.apache.xmlgraphics.commons.version>
 		<org.jcodec.jcodec.version>0.2.5</org.jcodec.jcodec.version>
 		<org.mp4parser.isoparser.version>1.9.56</org.mp4parser.isoparser.version>
-		<org.projectlombok.lombok.version>1.18.36</org.projectlombok.lombok.version>
+		<org.projectlombok.lombok.version>1.18.46</org.projectlombok.lombok.version>
 		<net.java.dev.jna.version>5.17.0</net.java.dev.jna.version>
 
 		<!-- Build -->
