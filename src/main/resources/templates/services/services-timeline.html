@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:attr="lang=${language}" dir="ltr">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<title th:text="${title}">DNG to JPEG - Green@rt</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" />
+
+	<!-- Favicons -->
+	<link href="./../img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+	<link href="./../img/favicon/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
+	<link href="./../img/favicon/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
+	<link href="./../img/favicon/site.webmanifest" rel="manifest" />
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com" rel="preconnect" />
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet" />
+
+	<!-- HUBER+SUHNER free kit -->
+	<!-- <script src="https://kit.fontawesome.com/0826cd9e2a.js" crossorigin="anonymous"></script> -->
+
+	<!-- Vendor CSS Files -->
+	<link rel="stylesheet" href="./../vendor/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./../vendor/bootstrap-icons/bootstrap-icons.css" />
+	<link rel="stylesheet" href="./../vendor/aos/aos.css" />
+	<link rel="stylesheet" href="./../vendor/fontawesome/css/all.min.css" />
+	<link rel="stylesheet" href="./../vendor/glightbox/css/glightbox.min.css" />
+	<link rel="stylesheet" href="./../vendor/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./../vendor/toaster/bootstrap-toaster.min.css" />
+	<link rel="stylesheet" href="./../vendor/datepicker/datepicker-bs5.1.3.4.css" />
+	
+	<!-- Dropzone -->
+	<link rel="stylesheet" href="./../vendor/dropzone/dropzone.min.css" type="text/css" />
+	
+	<!-- OSM -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
+	
+	<!-- Main CSS File -->
+	<link rel="stylesheet" href="./../css/main.css" />
+	
+	<style>
+		
+	</style>
+
+	<!-- =======================================================
+	  * Template Name: UpConstruction
+	  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+	  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+	  * Author: BootstrapMade.com
+	  * License: https://bootstrapmade.com/license/
+	======================================================== -->
+</head>
+
+<body class="services-page">
+
+	<header id="header" class="header d-flex align-items-center fixed-top">
+		<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+			<a href="./../index.html" class="logo d-flex align-items-center">
+				<img src="./../img/logo.jpeg" alt="" title="" />
+				<h1 class="sitename" th:text="${siteName}">Green@rt</h1> <span>.</span>
+			</a>
+
+			<nav id="navmenu" class="navmenu">
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="../about.html">About</a></li>
+					<li><a href="./services.html" class="active">Services</a></li>
+					<li><a href="../projects/projects.html">Projects</a></li>
+					<li><a href="../blog/blog.html">Blog</a></li>
+					<li class="dropdown"><a href="../development/development.html"><span>Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+						<ul>
+							<li><a href="./../development/development-timer.html">Development 'Timer'</a></li>
+							<li class="dropdown"><a href="#"><span>Deep Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+								<ul>
+									<li><a href="#">Deep Development 'Timer'</a></li>
+									<li><a href="#">Deep Development 2</a></li>
+									<li><a href="#">Deep Development 3</a></li>
+									<li><a href="#">Deep Development 4</a></li>
+									<li><a href="#">Deep Development 5</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Development 2</a></li>
+							<li><a href="#">Development 3</a></li>
+							<li><a href="#">Development 4</a></li>
+						</ul>
+					</li>
+					<li><a href="../contact.html">Contact</a></li>
+					<li><a href="../logout.html">Logout <i class="fas fa-sign-out-alt" title="Log out"></i></a></li>
+				</ul>
+				<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+			</nav>
+
+		</div>
+	</header>
+
+	<main class="main">
+
+		<!-- Page Title -->
+		<div class="page-title dark-background" style="background-image: url(./../img/page-title-bg.png);">
+			<div class="container position-relative">
+				<h1 th:text="${titleHead}">Update image creation date</h1>
+				<nav class="breadcrumbs">
+					<ol>
+						<li><a href="./../index.html">Home</a></li>
+						<li><a href="./services.html">Services</a></li>
+						<li th:text="${path}" class="current">Update WhatsApp image</li>
+					</ol>
+				</nav>
+			</div>
+		</div><!-- End Page Title -->
+
+		<!-- Image Upload & Drag'n Drop Section -->
+		<section id="upload" class="services section light-background">
+
+			<div class="container mt-5">
+				<div class="row">
+					<form id="dropzone" class="dropzone" action="#">
+						<!--  -->
+					</form>
+				</div>
+			</div>
+			<div class="container mt-5">
+				<form id="datetime" class="datetime" action="#">
+					<div id="datepicker" class="row input-group">
+						<div class="col-5 justify-content-start datepicker-input">
+							<i class="ms-2 input-group-text far fa-calendar"></i>
+							<input id="from" name="from" type="text" class="form-control date" />
+						</div>
+						<div class="col-2 justify-content-start input-group-text">to</div>
+						<div class="col-5 justify-content-start datepicker-input">
+							<i class="ms-2 input-group-text far fa-calendar"></i>
+							<input id="until" name="until" type="text" class="form-control date" />
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</section><!-- /Image Upload & Drag'n Drop Section -->
+
+		<!-- WebSocket Section -->
+		<section id="process" class="services section light-background">
+	
+			<div class="container py-5">
+				<div class="row justify-content-start">
+					 <div class="col-6">
+					 	<p id="process-lbl" class="text-end"><i class="fa-solid fa-photo-film" title="Images and movies available:"></i> <span th:text="${countMediaProcess}">Current number of images and movies</span>:</p>
+					 </div>
+					 <div class="col-6">
+					 	<p id="process-nbr" class="text-start"><span>0</span> <spa th:text="${successMediaProcess}"n>multi media file(s) processed successfully</span>.</p>
+					 </div>
+				</div>
+				<div class="row justify-content-start">
+					<div class="clearfix">
+						<div id="action" style="display:none;">
+							<p class="float-end">
+								<span th:text="${archiveCleanUp}">Remove uploaded file </span>
+								<a href="#">
+									<button id="remove" type="button" class="btn btn-primary">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+											<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+										</svg>
+									</button>
+								</a>
+							</p>
+							<p class="float-end">
+								<span th:text="${archiveDownload}">Download all files as archive </span>
+								<a href="./../api/v1/images/image/download/archive/memory">
+									<button id="archive" type="button" class="btn btn-primary">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
+											<path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"></path>
+										</svg>
+									</button>
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="row  justify-content-start">
+					<div id="timeaxis" class="main-timeline-2 grid">
+						<!--  -->
+					</div>
+				</div>
+			</div>
+	
+		</section><!-- /WebSocket Section -->
+
+		<!-- XXX -->
+		
+	</main>
+
+	<footer id="footer" class="footer dark-background">
+
+		<div class="container footer-top">
+			<div class="row gy-4">
+				<div class="col-lg-4 col-md-6 footer-about">
+					<a href="./../index.html" class="logo d-flex align-items-center">
+						<span class="sitename">Green@rt</span>
+					</a>
+					<div class="footer-contact pt-3">
+						<p>Eggstrasse 3421</p>
+						<p>CH-9100 Herisau</p>
+						<p class="mt-3"><strong>Phone:</strong> <span>+41 71 352 2401</span></p>
+						<p class="mt-3"><strong>Email:</strong> <span>juerg.hersche@bluewin.ch</span></p>
+					</div>
+					<div class="social-links d-flex mt-4">
+						<!--
+						<a href=""><i class="bi bi-twitter-x"></i></a>
+						<a href=""><i class="bi bi-facebook"></i></a>
+						-->
+						<a href="https://www.instagram.com/herscju/"><i class="bi bi-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/j%C3%BCrg-hersche-b3481a44/"><i class="bi bi-linkedin"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerLinksTitle}">Useful Links</h4>
+					<ul>
+						<li><a th:text="${footerLinksHome}" href="./../index.html">Home</a></li>
+						<li><a th:text="${footerLinksAbout}" href="#">About us</a></li>
+						<li><a th:text="${footerLinksServices}" href="./services.html">Services</a></li>
+						<li><a th:text="${footerLinksBlog}" href="./../blog/blog.html">Blog</a></li>
+						<li><a th:text="${footerLinksTerms}" href="#">Terms of service</a></li>
+						<li><a th:text="${footerLinksPrivacy}" href="#">Privacy policy</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerServicesTitle}">Our Services</h4>
+					<ul>
+						<li><a th:text="${footerServicesCertificate}" href="./services-certificate.html">Investigate certicate</a></li>
+						<li><a th:text="${footerServicesTxtChat}" href="./services-txtchat.html">Online-Chat (STOMP)</a></li>
+						<li><a th:text="${footerServicesDng2jpg}" href="./services-dng2jpg.html">RAW &amp; DNG to JPEG (single)</a></li>
+						<li><a th:text="${footerServicesAll2jpg}" href="./services-all2jpg.html">RAW &amp; DNG to JPEG (bulk)</a></li>
+						<li><a th:text="${footerServicesWhatsApp}" href="./services-timeline.html">Update WhatsApp image</a></li>
+						<li><a th:text="${footerServicesLightbox}" href="./services-lightbox.html">Image summary (lightbox)</a></li>
+						<li><a th:text="${footerServicesDoc4Ocr}" href="./services-doc4ocr.html">OCR for documents</a></li>
+						<li><a th:text="${footerServicesOpenApi}" href="./services-openapi.html">OpenAPI</a></li>
+						<li><a th:text="${footerServicesActuator}" href="./services-actuator.html">Actuator</a></li>
+						<li><a th:text="${footerServicesHawtio}" href="./services-hawtio.html">Hawtio web console</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerProjectsTitle}">Our projects</h4>
+					<ul>
+						<li><a th:text="${footerProjectsOnlyfans}" href="./../projects/projects-onlyfans.html">Project 'OnlyFans client'</a></li>
+						<li><a th:text="${footerProjectsLdapmgmt}" href="./../projects/projects-ldapmgmt.html">Project 'AD/DC Mgmt LDAP'</a></li>
+						<li><a href="#">Suscipit distinctio</a></li>
+						<li><a href="#">Dilecta</a></li>
+						<li><a href="#">Sit quas consectetur</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerDevelopmentTitle}">Our developments</h4>
+					<ul>
+						<li><a th:text="${footerDevelopmentCalendar}" href="./../development/development-calendar.html">Calendar</a></li>
+						<li><a th:text="${footerDevelopmentRestApi}" href="./../development/development-restapi.html">Rest API</a></li>
+						<li><a th:text="${footerDevelopmentScenario}" href="./../development/development-timer.html">Scenario</a></li>
+						<li><a href="#">Trodelas</a></li>
+						<li><a href="#">Flexo</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container copyright text-center mt-4">
+			<p th:utext="${copyright}">© <span>Copyright</span> <strong class="px-1 sitename">Green@rt</strong> <span>All Rights Reserved</span></p>
+			<div class="credits">
+				<!-- All the links in the footer should remain intact. -->
+				<!-- You can delete the links only if you've purchased the pro version. -->
+				<!-- Licensing information: https://bootstrapmade.com/license/ -->
+				<!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+			</div>
+		</div>
+
+	</footer>
+
+	<!-- Scroll Top -->
+	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Preloader -->
+	<div id="preloader"></div>
+
+	<!-- Overlay -->
+	<div id="overlay" style="display:none;">
+		<div class="spinner"><!--  --></div>
+	</div>
+
+	<!-- Vendor JS Files -->
+	<script src="./../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="./../vendor/aos/aos.js"></script>
+	<script src="./../vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="./../vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="./../vendor/toaster/bootstrap-toaster.min.js"></script>
+
+	<!-- Simple JS Files -->
+	<script src="./../js/imagesloaded.min.js"></script>
+	<script src="./../js/isotope.min.js"></script>
+	<script src="./../js/purecounter.min.js"></script>
+	
+	<!-- Dropzone -->
+	<script src="./../vendor/dropzone/dropzone.min.js"></script>
+
+	<!-- Websocket -->
+	<script src="./../js/sockjs.1.6.1.min.js"></script>
+	<script src="./../js/stomp.2.3.3.min.js"></script>
+	
+	<!-- Masonry  -->
+	<script src="./../js/masonry.pkgd.4.2.2.min.js"></script>
+
+	<!-- Datepicker (range) -->
+	<script src="./../vendor/datepicker/datepicker-full.min.1.3.4.js"></script>
+
+	<!-- Lightbox -->
+	<script src="./../js/lightbox.1.8.3.min.js"></script>
+	
+	<!-- OSM -->
+	<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+
+	<!-- Main JS File -->
+	<script src="./../js/main.js" defer="defer"></script>
+	
+	<script th:inline="javascript">
+		const keys = JSON.parse(/*[[${keys}]]*/ {});
+		const dropZone = JSON.parse(/*[[${dropZone}]]*/ {});
+		const fileDrop = /*[[${fileDrop}]]*/ "";
+	</script>
+	<script type="module">
+		import WebSocketClient from './../js/WebSocketClient.js';
+		import Converter from './../js/Converter.js';
+		import Downloader from './../js/Downloader.js';
+		import Draggable from './../js/Draggable.js';
+		import LightBox from './../js/LightBox.js';
+		import Sortable from './../js/Sortable.js';
+		import Timeline from './../js/Timeline.js';
+
+		Dropzone.options.dropzone = {
+			"url": "../api/v1/images/timeline/image/metadata/extract",
+			"method": "POST",
+			"dictDefaultMessage": fileDrop,
+			"withCredentials": dropZone.withCredentials,
+			"timeout": dropZone.timeout,
+			"parallelUploads": dropZone.parallelUploads,
+			"uploadMultiple": dropZone.uploadMultiple, // Default
+			"chunking": dropZone.chunking, // Default
+			"forceChunking": dropZone.forceChunking, // Default
+			"chunkSize": dropZone.chunkSize, // Default
+			"parallelChunkUploads": dropZone.parallelChunkUploads, // Default
+			"retryChunks": dropZone.retryChunks, // Default
+			"retryChunksLimit": dropZone.retryChunksLimit, // Default
+			"maxFilesize": dropZone.maxFilesize, // MB
+			"paramName": dropZone.paramName, // Default
+			"createImageThumbnails": dropZone.createImageThumbnails, // Default
+			"maxThumbnailFilesize": dropZone.maxThumbnailFilesize, // MB
+			"thumbnailWidth": dropZone.thumbnailWidth,
+			"thumbnailHeight": dropZone.thumbnailHeight,
+			"thumbnailMethod": dropZone.thumbnailMethod, // Default
+			"resizeWidth": dropZone.resizeWidth, // Default
+			"resizeHeight": dropZone.resizeHeight, // Default
+			"resizeMimeType": dropZone.resizeMimeType, // Default
+			"resizeQuality": dropZone.resizeQuality,
+			"resizeMethod": dropZone.resizeMethod, // Default
+			"filesizeBase": dropZone.filesizeBase, // Default
+			"maxFiles": dropZone.maxFiles, // Default
+			"headers": { "X-DropZone-Header": "Upload JPEG, PNG and others" },
+			"clickable": dropZone.clickable, // Default
+			"ignoreHiddenFiles": dropZone.ignoreHiddenFiles, // Default
+			"acceptedFiles": "image/jpeg,image/png,video/mp4", // dropZone.acceptedFiles,
+			"autoProcessQueue": dropZone.autoProcessQueue, // Default
+			"autoQueue": dropZone.autoQueue, // Default
+			"addRemoveLinks": dropZone.addRemoveLinks,
+			"previewsContainer": dropZone.previewsContainer, // Default
+			"disablePreviews": dropZone.disablePreviews, // Default
+			"hiddenInputContainer": dropZone.hiddenInputContainer, // Default
+			"capture": dropZone.capture, // Default
+			"renameFile": dropZone.renameFile, // Default
+			"forceFallback": dropZone.forceFallback, // Default
+
+			"init": function () {
+				this.on("addedfile", (file) => {
+					/*
+					*/
+				});
+				this.on("uploadprogress", (file, progress, bytesSent) => {
+					/*
+					if (file.previewElement) { console.log(progress); }
+					*/
+				});
+				this.on("thumbnail", (file, dataUrl) => {
+					/*
+					*/
+				});
+				this.on("success", (file, response) => {
+					if (response.status === 200 || response.status === 201 || response.status === 202) {
+						Toast.create({ "title": "Notice", "message": response.message, "status": TOAST_STATUS.SUCCESS, "timeout": 5000 });
+						window.setTimeout(() => this.removeFile(file), 25000);
+					} else {
+						console.error("An error has been occured. Detail message: '" + JSON.stringify(response) + "'.");
+						Toast.create({ "title": "Error", "message": "An error has been occured. Detail message: '" + JSON.stringify(response) + "'.", "status": TOAST_STATUS.DANGER, "timeout": 7500 });
+					}
+				});
+				this.on("error", (file, response) => {
+					console.error("An error has been occured. Detail message: '" + JSON.stringify(response) + "'.");
+					Toast.create({ "title": "Error", "message": "An error has been occured. Detail message: '" + JSON.stringify(response) + "'.", "status": TOAST_STATUS.DANGER, "timeout": 7500 });
+				});
+			}
+		};
+
+		/**
+		 * https://stackoverflow.com/a/77188776/6487382
+		 */
+		Datepicker.locales.de = {
+			"days": [ "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag" ],
+			"daysShort": [ "Sonn.", "Mon.", "Die.", "Mi.", "Do.", "Frei.", "Sam." ],
+			"daysMin": [ "So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa." ],
+			"months": [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ],
+			"monthsShort": [ "Jan.", "Feb.", "Mrz.", "Apr.", "Mai", "Jun.", "Jul.", "Aug.", "Sep.", "Okt.", "Nov.", "Dez." ],
+			"today": "Heute",
+			"weekStart": 1,
+			"clear": "Lösche",
+			"format": "dd.mm.yyyy"
+		};
+
+		const datepicker = new DateRangePicker(document.getElementById("datepicker"), {
+			"buttonClass": "btn",
+			"autohide": true,
+			"format": "dd.mm.yyyy",
+			"language": "de",
+			"maxDate": Date.now(),
+			"showOnClick": true,
+			"showOnFocus": true,
+			"allowOneSidedRange": true,
+			"todayHighlight": true,
+			"inputs": [ document.getElementById("from"), document.getElementById("until") ]
+		});
+		const dateRange = Timeline.getDateRange(7);
+		datepicker.setDates(dateRange.from, dateRange.until);
+
+		//
+		document.addEventListener("DOMContentLoaded", () => {
+
+			// Add icon to upload button
+			const button = document.getElementsByClassName("dz-button");
+			if (button && button.length > 0) {
+				const span = document.createElement("span");
+				span.className = "bi bi-upload";
+				button[0].appendChild(span);
+			}
+
+			// Set up remove button
+			const remove = document.getElementById("remove").parentNode;
+			remove.addEventListener("click", (evnt) => { return WebSocketClient.deleteAllFromCache(evnt, "memory", "action"); });
+			
+			// Configure WS client and handle image messages
+			const path = "/push";
+			const draggable = new Draggable({});
+			const lightbox = new LightBox({ "keyboard": true, "target": "[data-toggle=\"lightbox\"]", "gallery": "gallery", "size": "xl", "constrain": true });
+			const sortable = new Sortable({});
+			const timeline = new Timeline({ "locales": "de-CH", "maximumSignificantDigits": 12, "dateTimeFormatOptions": { "weekday": "short", "day": "2-digit", "month": "2-digit", "year": "numeric", "hour": "2-digit", "minute": "2-digit", "second": "2-digit", "timeZoneName": "short", "hour12": false } });
+			timeline.setLightBox(lightbox);
+			const webSocketClient = new WebSocketClient(path);
+			webSocketClient.initMasonry(".grid");
+			webSocketClient.initDatepicker(datepicker);
+			webSocketClient.initDraggable(draggable);
+			webSocketClient.initLightBox(lightbox);
+			webSocketClient.initSortable(sortable);
+			webSocketClient.initTimeline(timeline);
+			const socket = new SockJS(path);
+			const client = Stomp.over(socket);
+			client.debug = null; // See 'https://stackoverflow.com/a/25685340/6487382'
+			client.connect({}, (frame) => {
+
+				//console.log("Chat client connected: " + frame);
+				client.subscribe("/topic/timeline", (message) => {
+
+					//console.log("Got push message '" + message.body + "'.");
+
+					if (!keys || (keys && !keys.google)) {
+						throw new Error("Object 'keys' or property 'google' missing.");
+					}
+
+					const options = {
+						"googleApiKey": keys.google,
+						"language": "[[${language}]]",
+						"maximumSignificantDigits": 12,
+						"width": "100%",
+						"height": "400px",
+						"zoom": 16
+					};
+
+					const input = JSON.parse(message.body);
+
+					if (message.body && input && input.data) {
+						const date = Converter.convertImageType2DateTime(input.data.thumbnail.imageType, input.data.thumbnail.downloadDateTime);
+						//console.log(input.data.thumbnail.name + ": " + input.data.thumbnail.downloadDateTime + " --> " + JSON.stringify(date));
+
+						webSocketClient.showImageTimelineOutput("timeaxis", "action", options, WebSocketClient.stringToUUID(), input, date);
+					}
+				});
+			});
+
+		}, false);
+
+	</script>
+</body>
+
+</html>

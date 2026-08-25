@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" scan="true">
+	<Properties>
+		<!--<Property name="BASE_PATH">${log4j2.logfile.pathname}</Property> -->
+		<Property name="BASE_PATH">./logs/application</Property>
+		<Property name="LOG_LEVEL">%5p</Property>
+		<Property name="LOG_DATEFORMAT_CONSOLE">dd.MMMyyyy HH:mm:ss</Property>
+		<Property name="LOG_DATEFORMAT_LOGFILE">dd.MMMyyyy HH:mm:ss.SSS</Property>
+		<Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+		<Property name="CONSOLE_PATTERN">%clr{%d{${LOG_DATEFORMAT_CONSOLE}}}{faint}	%clr{${LOG_LEVEL}} %clr{%pid}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %msg%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+		<Property name="LOGFILE_PATTERN">%clr{%d{${LOG_DATEFORMAT_LOGFILE}}} %clr{${LOG_LEVEL}} %clr{%pid} %clr{---} %clr{[%15.15t]} %clr{%-80.80c{1.}} %clr{#%-4L} %clr{:} %msg%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+	</Properties>
+	<Appenders>
+		<File name="LOGFILE" fileName="${BASE_PATH}\metadata.test.log" immediateFlush="${log4j2.logfile.immediateFlush}" append="${log4j2.logfile.append}">
+			<PatternLayout pattern="${LOGFILE_PATTERN}" />
+		</File>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<!--<ThresholdFilter level="${log4j2.console.thresholdFilter}" onMatch="ACCEPT" onMismatch="DENY" /> -->
+			<ThresholdFilter level="ALL" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout pattern="${CONSOLE_PATTERN}" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<!--<Logger name="info.hersche.document.metadata" level="${log4j2.info.hersche.document.metadata}"></Logger> -->
+
+		<Logger name="info.hersche.document.metadata" level="ALL"></Logger>
+
+		<Logger name="com.zaxxer.hikari.pool.HikariPool" level="OFF"></Logger>
+		<Logger name="org.springframework.jms.listener.DefaultMessageListenerContainer" level="OFF"></Logger>
+
+		<Root level="ALL">
+			<AppenderRef ref="CONSOLE" />
+		</Root>
+	</Loggers>
+</Configuration>

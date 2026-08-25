@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.15</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>info.hersche.document</groupId>
+	<artifactId>metadata</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+	<name>Green@rt services</name>
+	<description>Get access to all kind of Green@rt services</description>
+
+
+	<organization>
+		<name>Green@rt</name>
+		<url>hersche.info</url>
+	</organization>
+
+
+	<contributors>
+		<contributor>
+			<name>Jürg Hersche</name>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<email>juerg.hersche@hersche.info</email>
+			<organization>Green@rt</organization>
+			<organizationUrl>hersche.info</organizationUrl>
+			<timezone>CET/CEST</timezone>
+		</contributor>
+	</contributors>
+
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<maven.profile.name>Development</maven.profile.name>
+				<spring.profiles.active>development</spring.profiles.active>
+				<spring.profiles.surefire.skip.test.unit>false</spring.profiles.surefire.skip.test.unit>
+
+				<log4j2.logfile.pathname>./logs/application</log4j2.logfile.pathname>
+				<log4j2.logfile.logline> %clr{#%-4L}</log4j2.logfile.logline>
+				<log4j2.logfile.append>false</log4j2.logfile.append>
+				<log4j2.logfile.immediateFlush>true</log4j2.logfile.immediateFlush>
+				<log4j2.logfile.ignoreExceptions>true</log4j2.logfile.ignoreExceptions>
+				<log4j2.logfile.monitorInterval>10</log4j2.logfile.monitorInterval>
+				<log4j2.logfile.policy.onStartUp.size>1</log4j2.logfile.policy.onStartUp.size>
+				<log4j2.logfile.policy.sizeBased.size>16384 MB</log4j2.logfile.policy.sizeBased.size>
+				<log4j2.logfile.policy.timeBased.interval>1</log4j2.logfile.policy.timeBased.interval>
+				<log4j2.logfile.policy.timeBased.modulate>false</log4j2.logfile.policy.timeBased.modulate>
+				<log4j2.logfile.thresholdFilter>ALL</log4j2.logfile.thresholdFilter>
+				<log4j2.console.thresholdFilter>ALL</log4j2.console.thresholdFilter>
+				<log4j2.info.hersche.document.metadata>ALL</log4j2.info.hersche.document.metadata>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>qas</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<maven.profile.name>QAS</maven.profile.name>
+				<spring.profiles.active>QAS</spring.profiles.active>
+				<spring.profiles.surefire.skip.test.unit>false</spring.profiles.surefire.skip.test.unit>
+
+				<log4j2.logfile.pathname>./logs/application</log4j2.logfile.pathname>
+				<log4j2.logfile.logline> %clr{#%-4L}</log4j2.logfile.logline>
+				<log4j2.logfile.append>false</log4j2.logfile.append>
+				<log4j2.logfile.immediateFlush>true</log4j2.logfile.immediateFlush>
+				<log4j2.logfile.ignoreExceptions>true</log4j2.logfile.ignoreExceptions>
+				<log4j2.logfile.monitorInterval>10</log4j2.logfile.monitorInterval>
+				<log4j2.logfile.policy.onStartUp.size>1</log4j2.logfile.policy.onStartUp.size>
+				<log4j2.logfile.policy.sizeBased.size>16384 MB</log4j2.logfile.policy.sizeBased.size>
+				<log4j2.logfile.policy.timeBased.interval>1</log4j2.logfile.policy.timeBased.interval>
+				<log4j2.logfile.policy.timeBased.modulate>false</log4j2.logfile.policy.timeBased.modulate>
+				<log4j2.logfile.thresholdFilter>ALL</log4j2.logfile.thresholdFilter>
+				<log4j2.console.thresholdFilter>ALL</log4j2.console.thresholdFilter>
+				<log4j2.info.hersche.document.metadata>ALL</log4j2.info.hersche.document.metadata>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<maven.profile.name>Productive</maven.profile.name>
+				<spring.profiles.active>productive</spring.profiles.active>
+				<spring.profiles.surefire.skip.test.unit>true</spring.profiles.surefire.skip.test.unit>
+
+				<log4j2.logfile.pathname>./logs/application</log4j2.logfile.pathname>
+				<log4j2.logfile.logline> %clr{#%-4L}</log4j2.logfile.logline>
+				<log4j2.logfile.append>false</log4j2.logfile.append>
+				<log4j2.logfile.immediateFlush>true</log4j2.logfile.immediateFlush>
+				<log4j2.logfile.ignoreExceptions>true</log4j2.logfile.ignoreExceptions>
+				<log4j2.logfile.monitorInterval>10</log4j2.logfile.monitorInterval>
+				<log4j2.logfile.policy.onStartUp.size>1</log4j2.logfile.policy.onStartUp.size>
+				<log4j2.logfile.policy.sizeBased.size>16384 MB</log4j2.logfile.policy.sizeBased.size>
+				<log4j2.logfile.policy.timeBased.interval>1</log4j2.logfile.policy.timeBased.interval>
+				<log4j2.logfile.policy.timeBased.modulate>false</log4j2.logfile.policy.timeBased.modulate>
+				<log4j2.logfile.thresholdFilter>ALL</log4j2.logfile.thresholdFilter>
+				<log4j2.console.thresholdFilter>ALL</log4j2.console.thresholdFilter>
+				<log4j2.info.hersche.document.metadata>ALL</log4j2.info.hersche.document.metadata>
+			</properties>
+		</profile>
+	</profiles>
+
+
+	<properties>
+		<java.version>17</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- Libraries -->
+		<com.github.waffle.version>3.6.0</com.github.waffle.version>
+		<com.twelvemonkeys.imageio.version>3.13.1</com.twelvemonkeys.imageio.version>
+		<org.apache.commons.codec.version>1.18.0</org.apache.commons.codec.version>
+		<org.apache.commons.collections.version>4.5.0</org.apache.commons.collections.version>
+		<org.apache.commons.compress.version>1.28.0</org.apache.commons.compress.version>
+		<org.apache.commons.io.version>2.21.0</org.apache.commons.io.version>
+		<org.apache.commons.imaging.version>1.0.0-alpha6</org.apache.commons.imaging.version>
+		<org.apache.commons.lang3.version>3.17.0</org.apache.commons.lang3.version>
+		<org.apache.httpcomponents.core5.version>5.3.1</org.apache.httpcomponents.core5.version>
+		<org.apache.httpcomponents.client5.version>5.4.2</org.apache.httpcomponents.client5.version>
+		<org.apache.pdfbox.version>3.0.7</org.apache.pdfbox.version>
+		<org.apache.tika.core.version>3.3.0</org.apache.tika.core.version>
+		<org.apache.xerces.version>2.12.2</org.apache.xerces.version>
+		<org.apache.xmlgraphics.commons.version>2.11</org.apache.xmlgraphics.commons.version>
+		<org.jcodec.jcodec.version>0.2.5</org.jcodec.jcodec.version>
+		<org.mp4parser.isoparser.version>1.9.56</org.mp4parser.isoparser.version>
+		<org.projectlombok.lombok.version>1.18.36</org.projectlombok.lombok.version>
+		<net.java.dev.jna.version>5.17.0</net.java.dev.jna.version>
+
+		<!-- Build -->
+		<org.projectlombok.plugin.version>1.18.20.0</org.projectlombok.plugin.version>
+	</properties>
+
+
+	<repositories>
+		<!--
+		<repository>
+			<id>irisa</id>
+			<name>IRISA custom repository</name>
+			<url>https://maven.irisa.fr/artifactory/list/kermeta-public-release/</url>
+		</repository>
+		-->
+		<repository>
+			<id>CentralRepository</id>
+			<name>Central Repository</name>
+			<url>https://repo1.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>ClazzesRepository</id>
+			<name>Clazzes Repository</name>
+			<url>https://maven.clazzes.org/</url>
+		</repository>
+	</repositories>
+
+
+	<dependencies>
+		<!-- Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>log4j-over-slf4j</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jersey</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-messaging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-ldap</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ldap</groupId>
+			<artifactId>spring-ldap-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf-spring6</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
+		</dependency>
+
+
+		<!-- OpenAPI -->
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+
+
+		<!-- JSON -->
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-jaxb-annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-jaxb-annotations</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-parameter-names -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-parameter-names</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+
+
+		<!-- SSO -->
+		<!-- https://mvnrepository.com/artifact/com.github.waffle/waffle-spring-boot-starter3 -->
+		<dependency>
+			<groupId>com.github.waffle</groupId>
+			<artifactId>waffle-spring-boot-starter3</artifactId>
+			<version>${com.github.waffle.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.waffle/waffle-spring-boot-autoconfigure3 -->
+		<dependency>
+			<groupId>com.github.waffle</groupId>
+			<artifactId>waffle-spring-boot-autoconfigure3</artifactId>
+			<version>${com.github.waffle.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.waffle/waffle-spring-security6 -->
+		<dependency>
+			<groupId>com.github.waffle</groupId>
+			<artifactId>waffle-spring-security6</artifactId>
+			<version>${com.github.waffle.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.waffle/waffle-tomcat10 -->
+<!--
+		<dependency>
+			<groupId>com.github.waffle</groupId>
+			<artifactId>waffle-tomcat10</artifactId>
+			<version>${com.github.waffle.version}</version>
+		</dependency>
+-->
+		<!-- https://mvnrepository.com/artifact/com.github.waffle/waffle-jna-jakarta -->
+<!--
+		<dependency>
+			<groupId>com.github.waffle</groupId>
+			<artifactId>waffle-jna-jakarta</artifactId>
+			<version>${com.github.waffle.version}</version>
+		</dependency>
+-->
+		<!-- https://mvnrepository.com/artifact/com.github.waffle/waffle-jna -->
+<!--
+		<dependency>
+			<groupId>com.github.waffle</groupId>
+			<artifactId>waffle-jna</artifactId>
+			<version>${com.github.waffle.version}</version>
+		</dependency>
+-->
+		<!-- https://mvnrepository.com/artifact/net.java.dev.jna/jna -->
+		<!--
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>5.15.0</version>
+		</dependency>
+		-->
+
+
+		<!-- Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+
+
+		<!-- WebSocket and messaging -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-messaging -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-broker -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-broker</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-pool -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.corundumstudio.socketio/netty-socketio -->
+		<dependency>
+			<groupId>com.corundumstudio.socketio</groupId>
+			<artifactId>netty-socketio</artifactId>
+			<version>2.0.14</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.nkzawa/engine.io-client -->
+		<!--
+		<dependency>
+			<groupId>com.github.nkzawa</groupId>
+			<artifactId>engine.io-client</artifactId>
+			<version>0.6.0</version>
+		</dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/io.socket/engine.io-client -->
+		<!--
+		<dependency>
+			<groupId>io.socket</groupId>
+			<artifactId>engine.io-client</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/io.socket/socket.io-client -->
+		<dependency>
+			<groupId>io.socket</groupId>
+			<artifactId>socket.io-client</artifactId>
+			<version>2.1.2</version>
+		</dependency>
+
+
+		<!-- Caching -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
+		<dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.cache/cache-api -->
+		<dependency>
+			<groupId>javax.cache</groupId>
+			<artifactId>cache-api</artifactId>
+		</dependency>
+
+
+		<!-- Images -->
+		<!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>[0.4, 0.5)</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor, but use cloned and modified/updated version 2.19.1 -->
+		<dependency>
+			<groupId>com.drewnoakes</groupId>
+			<artifactId>metadata-extractor</artifactId>
+			<version>2.19.1</version>
+			<scope>system</scope>
+			<systemPath>${user.home}/.m2/repository/com/drewnoakes/metadata-extractor/2.19.1/metadata-extractor-2.19.1.jar</systemPath>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.adobe.xmp/xmpcore -->
+		<dependency>
+			<groupId>com.adobe.xmp</groupId>
+			<artifactId>xmpcore</artifactId>
+			<version>6.1.11</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.jai-imageio/jai-imageio-core -->
+		<dependency>
+			<groupId>com.github.jai-imageio</groupId>
+			<artifactId>jai-imageio-core</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+			<type>pom</type>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-core -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-core</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-metadata -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-metadata</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-reference -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-reference</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-batik -->
+		<!--
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-batik</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		-->
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-bmp -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-bmp</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-clippath -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-clippath</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-hdr -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-hdr</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-icns -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-icns</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-iff -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-iff</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-jpeg -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-jpeg</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-jpeg-jai-interop -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-jpeg-jai-interop</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-jpeg-jep262-interop -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-jpeg-jep262-interop</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-pcx -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-pcx</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-pdf -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-pdf</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency><!--
+		https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-pict -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-pict</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-pnm -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-pnm</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-psd -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-psd</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-sgi -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-sgi</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-tga -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-tga</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-tiff -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-tiff</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-tiff-jai-interop -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-tiff-jai-interop</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-tiff-jdk-interop -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-tiff-jdk-interop</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-thumbsdb -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-thumbsdb</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-webp -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-webp</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-xwd -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-xwd</artifactId>
+			<version>${com.twelvemonkeys.imageio.version}</version>
+		</dependency>
+
+
+		<!-- Movies -->
+		<!-- https://mvnrepository.com/artifact/org.mp4parser/isoparser -->
+		<dependency>
+			<groupId>org.mp4parser</groupId>
+			<artifactId>isoparser</artifactId>
+			<version>${org.mp4parser.isoparser.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jcodec/jcodec -->
+		<dependency>
+			<groupId>org.jcodec</groupId>
+			<artifactId>jcodec</artifactId>
+			<version>${org.jcodec.jcodec.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jcodec/jcodec-javase -->
+		<dependency>
+			<groupId>org.jcodec</groupId>
+			<artifactId>jcodec-javase</artifactId>
+			<version>${org.jcodec.jcodec.version}</version>
+		</dependency>
+
+
+		<!-- PDF handling -->
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>${org.apache.pdfbox.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/fontbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>fontbox</artifactId>
+			<version>${org.apache.pdfbox.version}</version>
+		</dependency>
+
+
+		<!-- Logging, etc. -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+
+		<!-- Utils -->
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>${org.apache.commons.collections.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>${org.apache.commons.compress.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${org.apache.commons.io.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-imaging -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-imaging</artifactId>
+			<version>${org.apache.commons.imaging.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents.core5</groupId>
+			<artifactId>httpcore5</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
+		<dependency>
+			<groupId>org.apache.httpcomponents.client5</groupId>
+			<artifactId>httpclient5</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tika/tika-core -->
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-core</artifactId>
+			<version>${org.apache.tika.core.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.xerces/org.apache.xerces -->
+		<dependency>
+			<groupId>org.apache.xerces</groupId>
+			<artifactId>org.apache.xerces</artifactId>
+			<version>${org.apache.xerces.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/xmlgraphics-commons -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>xmlgraphics-commons</artifactId>
+			<version>${org.apache.xmlgraphics.commons.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.annotation.versioning -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.annotation.versioning</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect -->
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.neovisionaries/nv-i18n -->
+		<dependency>
+			<groupId>com.neovisionaries</groupId>
+			<artifactId>nv-i18n</artifactId>
+			<version>1.29</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.hawt/hawtio-springboot -->
+		<dependency>
+			<groupId>io.hawt</groupId>
+			<artifactId>hawtio-springboot</artifactId>
+			<version>5.0.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.hawt/hawtio-util -->
+		<dependency>
+			<groupId>io.hawt</groupId>
+			<artifactId>hawtio-util</artifactId>
+			<version>2.17.7</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.camel.springboot/camel-spring-boot-starter -->
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-spring-boot-starter</artifactId>
+			<version>4.18.0</version>
+		</dependency>
+
+
+		<!-- Database -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc11</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<!-- Tests -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.sql</include>
+					<include>**/*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/data/**</exclude>
+					<exclude>**/i18n/**</exclude>
+					<exclude>**/static/**</exclude>
+					<exclude>**/templates/**</exclude>
+					<exclude>**/*.bmp</exclude>
+					<exclude>**/*.crt</exclude>
+					<exclude>**/*.gif</exclude>
+					<exclude>**/*.ico</exclude>
+					<exclude>**/*.js</exclude>
+					<exclude>**/*.jpg</exclude>
+					<exclude>**/*.jpeg</exclude>
+					<exclude>**/*.map</exclude>
+					<exclude>**/*.mp4</exclude>
+					<exclude>**/*.pdf</exclude>
+					<exclude>**/*.pfx</exclude>
+					<exclude>**/*.png</exclude>
+					<exclude>**/*.ser</exclude>
+					<exclude>**/*.ttf</exclude>
+					<exclude>**/*.woff</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/static/**</include>
+					<include>**/templates/**</include>
+					<include>**/*.bmp</include>
+					<include>**/*.crt</include>
+					<include>**/*.gif</include>
+					<include>**/*.ico</include>
+					<include>**/*.js</include>
+					<include>**/*.jpg</include>
+					<include>**/*.jpeg</include>
+					<include>**/*.map</include>
+					<include>**/*.mp4</include>
+					<include>**/*.pdf</include>
+					<include>**/*.pfx</include>
+					<include>**/*.png</include>
+					<include>**/*.ser</include>
+					<include>**/*.ttf</include>
+					<include>**/*.woff</include>
+				</includes>
+				<excludes>
+					<exclude>**/data/**</exclude>
+					<exclude>**/i18n/**</exclude>
+					<exclude>**/*.properties</exclude>
+					<exclude>**/*.sql</exclude>
+					<exclude>**/*.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<jvmArguments>
+						-Xms3072m
+						-Xmx6144m
+						-XX:MaxDirectMemorySize=7168m
+					</jvmArguments>
+				</configuration>
+			</plugin>
+
+
+			<!-- Apache Maven Resources Plugin -->
+			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+			<!-- https://stackoverflow.com/a/65910205 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<addDefaultExcludes>true</addDefaultExcludes>
+					<delimiters>
+						<delimiter>${*}</delimiter>
+						<delimiter>@</delimiter>
+					</delimiters>
+					<useDefaultDelimiters>true</useDefaultDelimiters>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>bmp</nonFilteredFileExtension>
+						<nonFilteredFileExtension>crt</nonFilteredFileExtension>
+						<nonFilteredFileExtension>gif</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+						<nonFilteredFileExtension>js</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>map</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+						<nonFilteredFileExtension>png</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ser</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+
+
+			<!-- Lombok Maven plugin -->
+			<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
+			<!-- https://stackoverflow.com/a/51947792/2157268 -->
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+				<version>${org.projectlombok.plugin.version}</version>
+				<configuration>
+					<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+					<outputDirectory>${delombok.output}</outputDirectory>
+					<addOutputDirectory>false</addOutputDirectory>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok</artifactId>
+						<version>${org.projectlombok.lombok.version}</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>delombok</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>delombok</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<!-- Tests -->
+			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					 <includes>
+					 	 <include>**/**Tests.java</include>
+					 </includes>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

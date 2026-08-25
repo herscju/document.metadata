@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+.container-led {
+	height: 60px;
+}
+
+.led-box {
+	width: 20%;
+	height: 30px;
+	margin: 10px 0;
+	float: left;
+}
+
+.led-box p {
+	margin: 1em;
+	font-size: 12px;
+	text-align: center;
+}
+
+.led {
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+
+.led-rd {
+	background-color: #F00;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+}
+
+.led-gn {
+	background-color: #ABFF00;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+}
+
+.led-bl {
+	background-color: #24E0FF;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
+}
+
+.led-ye {
+	background-color: #FF0;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+}
+
+.led-or {
+	background-color: rgb(255, 128, 0);
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, rgb(255, 128, 0) 0 2px 12px;
+}
+
+.led-on {
+	/* */
+}
+
+.led-off {
+	background-color: rgb(189, 189, 189);
+	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #474747 0 -1px 9px, rgba(87, 87, 87, 0.5) 0 2px 12px;
+}

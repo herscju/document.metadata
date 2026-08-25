@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:attr="lang=${language}" dir="ltr">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<title th:text="${title}">Services - Green@rt</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" />
+
+	<!-- Favicons -->
+	<link href="./../img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+	<link href="./../img/favicon/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
+	<link href="./../img/favicon/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
+	<link href="./../img/favicon/site.webmanifest" rel="manifest" />
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com" rel="preconnect" />
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet" />
+
+	<!-- HUBER+SUHNER free kit -->
+	<!-- <script src="https://kit.fontawesome.com/0826cd9e2a.js" crossorigin="anonymous"></script> -->
+
+	<!-- Vendor CSS Files -->
+	<link rel="stylesheet" href="./../vendor/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./../vendor/bootstrap-icons/bootstrap-icons.css" />
+	<link rel="stylesheet" href="./../vendor/aos/aos.css" />
+	<link rel="stylesheet" href="./../vendor/fontawesome/css/all.min.css" />
+	<link rel="stylesheet" href="./../vendor/glightbox/css/glightbox.min.css" />
+	<link rel="stylesheet" href="./../vendor/swiper/swiper-bundle.min.css" />
+
+	<!-- Main CSS File -->
+	<link rel="stylesheet" href="./../css/main.css" />
+
+	<!-- =======================================================
+	  * Template Name: UpConstruction
+	  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+	  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+	  * Author: BootstrapMade.com
+	  * License: https://bootstrapmade.com/license/
+	======================================================== -->
+</head>
+
+<body class="services-page">
+
+	<header id="header" class="header d-flex align-items-center fixed-top">
+		<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+			<a href="./../index.html" class="logo d-flex align-items-center">
+				<img src="./../img/logo.jpeg" alt="" title="" />
+				<h1 class="sitename" th:text="${siteName}">Green@rt</h1> <span>.</span>
+			</a>
+
+			<nav id="navmenu" class="navmenu">
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="../about.html">About</a></li>
+					<li><a href="./services.html" class="active">Services</a></li>
+					<li><a href="../projects/projects.html">Projects</a></li>
+					<li><a href="../blog/blog.html">Blog</a></li>
+					<li class="dropdown"><a href="../development/development.html"><span>Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+						<ul>
+							<li><a href="./../development/development-timer.html">Development 'Timer'</a></li>
+							<li class="dropdown"><a href="#"><span>Deep Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+								<ul>
+									<li><a href="#">Deep Development 'Timer'</a></li>
+									<li><a href="#">Deep Development 2</a></li>
+									<li><a href="#">Deep Development 3</a></li>
+									<li><a href="#">Deep Development 4</a></li>
+									<li><a href="#">Deep Development 5</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Development 2</a></li>
+							<li><a href="#">Development 3</a></li>
+							<li><a href="#">Development 4</a></li>
+						</ul>
+					</li>
+					<li><a href="../contact.html">Contact</a></li>
+					<li><a href="../logout.html">Logout <i class="fas fa-sign-out-alt" title="Log out"></i></a></li>
+				</ul>
+				<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+			</nav>
+
+		</div>
+	</header>
+
+	<main class="main">
+
+		<!-- Page Title -->
+		<div class="page-title dark-background" style="background-image: url(./../img/page-title-bg.png);">
+			<div class="container position-relative">
+				<h1 th:text="${titleHead}">Services</h1>
+				<nav class="breadcrumbs">
+					<ol>
+						<li><a href="./../index.html">Home</a></li>
+						<li th:text="${path}" class="current">Services</li>
+					</ol>
+				</nav>
+			</div>
+		</div><!-- End Page Title -->
+
+		<!-- Services Section -->
+		<section id="services" class="services section light-background">
+
+			<div class="container">
+
+				<div class="row gy-4">
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-helmet-safety"></i>
+							</div>
+							<h3>Online chat (STOMP)</h3>
+							<p>Online chat is any kind of communication over the Internet that offers a real-time transmission of text messages from sender to receiver. Chat messages are generally short in order to enable other participants to respond quickly. Thereby, a feeling similar to a spoken conversation is created, which distinguishes chatting from other text-based online communication forms such as Internet forums and email. Online chat may address point-to-point communications as well as multicast communications from one sender to many receivers and voice and video chat, or may be a feature of a web conferencing service.</p>
+							<hr />
+							<a href="./services-txtchat.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+						<div class="service-item  position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-mountain-city"></i>
+							</div>
+							<h3>RAW &amp; DNG to JPEG</h3>
+							<p>When exporting DNG and RAW images from Lightroom Classic, the correct creation date is not set or even wrong. This service sets it according to the file name (with the format YYYYMMDD_HHMMSS.jpg).</p>
+							<hr />
+							<a href="./services-dng2jpg.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-arrow-up-from-ground-water"></i>
+							</div>
+							<h3>All to JPEG</h3>
+							<p>When exporting DNG and RAW images from Lightroom Classic, the correct creation date is not set or even wrong. This service sets it according to the file name (with the format YYYYMMDD_HHMMSS.jpg).</p>
+							<p>This service is available for bulk upload.</p>
+							<hr />
+							<a href="./services-all2jpg.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-highlighter"></i>
+							</div>
+							<h3>Update WhatsApp image with time line</h3>
+							<p>When pictures are sent via WhatsApp, the original metadata is missing or overwritten, as in the case of the date the picture was taken. This service allows you to drag and drop WhatsApp images into the correct order. The recording date is mutated in the process.</p>
+							<hr />
+							<a href="./services-timeline.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-object-group"></i>
+							</div>
+							<h3>Lightbox :: Image overview</h3>
+							<p>The light box - also a gallery - shows the uploaded media files in the order of the date they were recorded.</p>
+							<hr />
+							<a href="./services-lightbox.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-file-circle-question"></i>
+							</div>
+							<h3>Optical character recognition for PDF documents and images</h3>
+							<p>Get the content (text) of PDF documents and images (JPEG &amp; PNG).</p>
+							<hr />
+							<a href="./services-doc4ocr.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-bezier-curve"></i>
+							</div>
+							<h3>OpenAPI definition</h3>
+							<p>The OpenAPI Specification (OAS) defines a standard, language-agnostic interface to HTTP APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with a minimal amount of implementation logic.</p>
+							<hr />
+							<a href="./services-openapi.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-compass-drafting"></i>
+							</div>
+							<h3>Actuator (Details)</h3>
+							<p>Developing and Managing an application are the two most important aspects of the application’s life cycle. It is very crucial to know what’s going on beneath the application. Also when we push the application into production, managing it gradually becomes critically important. Therefore, it is always recommended to monitor the application both while at the development phase and at the production phase.</p>
+							<p>For the same use case, Spring Boot provides an actuator dependency that can be used to monitor and manage your Spring Boot application. By &quot;/details&quot; and &quot;/details/health&quot; endpoints you can achieve the purpose of monitoring.</p>
+							<hr />
+							<a href="./services-actuator.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="fa-solid fa-trowel-bricks"></i>
+							</div>
+							<h3>Hawtio</h3>
+							<p>Hawtio is a pluggable web management console, built with the modern Web technologies such as React and PatternFly.</p>
+							<hr />
+							<a href="./services-hawtio.html" class="readmore stretched-link"><span th:text="${seeService}">See service</span> <i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div><!-- End Service Item -->
+
+				</div>
+
+			</div>
+
+		</section><!-- /Services Section -->
+
+		<!-- Features Cards Section -->
+		<section id="features-cards" class="features-cards section">
+
+			<div class="container">
+
+				<div class="row gy-4">
+
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<h3>Quasi eaque omnis</h3>
+						<p>Eius non minus autem soluta ut ui labore omnis quisquam corrupti autem odit voluptas quos commodi magnam occaecati.</p>
+						<ul class="list-unstyled">
+							<li><i class="bi bi-check2"></i> <span>Ullamco laboris nisi ut aliquip</span></li>
+							<li><i class="bi bi-check2"></i> <span>Duis aute irure dolor in reprehenderit</span></li>
+							<li><i class="bi bi-check2"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+						</ul>
+					</div><!-- End feature item-->
+
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+						<h3>Et nemo dolores consectetur</h3>
+						<p>Ducimus ea quam et occaecati est. Temporibus in soluta labore voluptates aut. Et sit soluta non repellat sed quia dire plovers tradoria</p>
+						<ul class="list-unstyled">
+							<li><i class="bi bi-check2"></i> <span>Enim temporibus maiores eligendi</span></li>
+							<li><i class="bi bi-check2"></i> <span>Ut maxime ut quibusdam quam qui</span></li>
+							<li><i class="bi bi-check2"></i> <span>Officiis aspernatur in officiis</span></li>
+						</ul>
+					</div><!-- End feature item-->
+
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<h3>Staque laboriosam modi</h3>
+						<p>Velit eos error et dolor omnis voluptates nobis tenetur sed enim nihil vero qui suscipit ipsum at magni. Ipsa architecto consequatur aliquam</p>
+						<ul class="list-unstyled">
+							<li><i class="bi bi-check2"></i> <span>Quis voluptates laboriosam numquam</span></li>
+							<li><i class="bi bi-check2"></i> <span>Debitis eos est est corrupti</span></li>
+						</ul>
+					</div><!-- End feature item-->
+
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+						<h3>Dignissimos suscipit iste</h3>
+						<p>Molestiae occaecati assumenda quia saepe nobis recusandae at dicta ducimus sequi numquam commodi est in consequatur ea magnam quia itaque</p>
+						<ul class="list-unstyled">
+							<li><i class="bi bi-check2"></i> <span>Veritatis qui reprehenderit quis</span></li>
+							<li><i class="bi bi-check2"></i> <span>Accusantium vel numquam sunt minus</span></li>
+							<li><i class="bi bi-check2"></i> <span>Voluptatem pariatur est sationem</span></li>
+						</ul>
+					</div><!-- End feature item-->
+
+				</div>
+
+			</div>
+
+		</section><!-- /Features Cards Section -->
+
+		<!-- Alt Services 2 Section -->
+		<section id="alt-services-2" class="alt-services-2 section">
+
+			<div class="container">
+
+				<div class="row justify-content-around gy-4">
+
+					<div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1"
+						data-aos="fade-up" data-aos-delay="100">
+						<h3>Enim quis est voluptatibus aliquid consequatur</h3>
+						<p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
+
+						<div class="row">
+
+							<div class="col-lg-6 icon-box d-flex">
+								<i class="bi bi-easel flex-shrink-0"></i>
+								<div>
+									<h4>Lorem Ipsum</h4>
+									<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias</p>
+								</div>
+							</div><!-- End Icon Box -->
+
+							<div class="col-lg-6 icon-box d-flex">
+								<i class="bi bi-patch-check flex-shrink-0"></i>
+								<div>
+									<h4>Nemo Enim</h4>
+									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiise</p>
+								</div>
+							</div><!-- End Icon Box -->
+
+							<div class="col-lg-6 icon-box d-flex">
+								<i class="bi bi-brightness-high flex-shrink-0"></i>
+								<div>
+									<h4>Dine Pad</h4>
+									<p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit</p>
+								</div>
+							</div><!-- End Icon Box -->
+
+							<div class="col-lg-6 icon-box d-flex">
+								<i class="bi bi-brightness-high flex-shrink-0"></i>
+								<div>
+									<h4>Tride clov</h4>
+									<p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit</p>
+								</div>
+							</div><!-- End Icon Box -->
+
+						</div>
+
+					</div>
+
+					<div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+						<img src="./../img/features-3-2.png" alt="" title="" />
+					</div>
+
+				</div>
+
+			</div>
+
+		</section><!-- /Alt Services 2 Section -->
+
+		<!-- Testimonials Section -->
+		<section id="testimonials" class="testimonials section">
+
+			<div class="container" data-aos="fade-up" data-aos-delay="100">
+
+				<div class="swiper init-swiper">
+					<script type="application/json" class="swiper-config">
+			            {
+			              "loop": true,
+			              "speed": 600,
+			              "autoplay": {
+			                "delay": 5000
+			              },
+			              "slidesPerView": "auto",
+			              "pagination": {
+			                "el": ".swiper-pagination",
+			                "type": "bullets",
+			                "clickable": true
+			              },
+			              "breakpoints": {
+			                "320": {
+			                  "slidesPerView": 1,
+			                  "spaceBetween": 40
+			                },
+			                "1200": {
+			                  "slidesPerView": 2,
+			                  "spaceBetween": 20
+			                }
+			              }
+			            }
+					</script>
+					<div class="swiper-wrapper">
+
+						<div class="swiper-slide">
+							<div class="testimonial-wrap">
+								<div class="testimonial-item">
+									<img src="./../img/testimonials-1.png" class="testimonial-img" alt="" title="" />
+									<h3>Saul Goodman</h3>
+									<h4>Ceo &amp; Founder</h4>
+									<div class="stars">
+										<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+									</div>
+									<p>
+										<i class="bi bi-quote quote-icon-left"></i>
+										<span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+										<i class="bi bi-quote quote-icon-right"></i>
+									</p>
+								</div>
+							</div>
+						</div><!-- End testimonial item -->
+
+						<div class="swiper-slide">
+							<div class="testimonial-wrap">
+								<div class="testimonial-item">
+									<img src="./../img/testimonials-2.png" class="testimonial-img" alt="" title="" />
+									<h3>Sara Wilsson</h3>
+									<h4>Designer</h4>
+									<div class="stars">
+										<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+									</div>
+									<p>
+										<i class="bi bi-quote quote-icon-left"></i>
+										<span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+										<i class="bi bi-quote quote-icon-right"></i>
+									</p>
+								</div>
+							</div>
+						</div><!-- End testimonial item -->
+
+						<div class="swiper-slide">
+							<div class="testimonial-wrap">
+								<div class="testimonial-item">
+									<img src="./../img/testimonials-3.png" class="testimonial-img" alt="" title="" />
+									<h3>Jena Karlis</h3>
+									<h4>Store Owner</h4>
+									<div class="stars">
+										<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+									</div>
+									<p>
+										<i class="bi bi-quote quote-icon-left"></i>
+										<span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+										<i class="bi bi-quote quote-icon-right"></i>
+									</p>
+								</div>
+							</div>
+						</div><!-- End testimonial item -->
+
+						<div class="swiper-slide">
+							<div class="testimonial-wrap">
+								<div class="testimonial-item">
+									<img src="./../img/testimonials-4.png" class="testimonial-img" alt="" title="" />
+									<h3>Matt Brandon</h3>
+									<h4>Freelancer</h4>
+									<div class="stars">
+										<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+									</div>
+									<p>
+										<i class="bi bi-quote quote-icon-left"></i>
+										<span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+										<i class="bi bi-quote quote-icon-right"></i>
+									</p>
+								</div>
+							</div>
+						</div><!-- End testimonial item -->
+
+						<div class="swiper-slide">
+							<div class="testimonial-wrap">
+								<div class="testimonial-item">
+									<img src="./../img/testimonials-5.png" class="testimonial-img" alt="" title="" />
+									<h3>John Larson</h3>
+									<h4>Entrepreneur</h4>
+									<div class="stars">
+										<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+									</div>
+									<p>
+										<i class="bi bi-quote quote-icon-left"></i>
+										<span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+										<i class="bi bi-quote quote-icon-right"></i>
+									</p>
+								</div>
+							</div>
+						</div><!-- End testimonial item -->
+
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+			</div>
+
+		</section><!-- /Testimonials Section -->
+
+	</main>
+
+	<footer id="footer" class="footer dark-background">
+
+		<div class="container footer-top">
+			<div class="row gy-4">
+				<div class="col-lg-4 col-md-6 footer-about">
+					<a href="./../index.html" class="logo d-flex align-items-center">
+						<span class="sitename">Green@rt</span>
+					</a>
+					<div class="footer-contact pt-3">
+						<p>Eggstrasse 3421</p>
+						<p>CH-9100 Herisau</p>
+						<p class="mt-3"><strong>Phone:</strong> <span>+41 71 352 2401</span></p>
+						<p class="mt-3"><strong>Email:</strong> <span>juerg.hersche@bluewin.ch</span></p>
+					</div>
+					<div class="social-links d-flex mt-4">
+						<!--
+						<a href=""><i class="bi bi-twitter-x"></i></a>
+						<a href=""><i class="bi bi-facebook"></i></a>
+						-->
+						<a href="https://www.instagram.com/herscju/"><i class="bi bi-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/j%C3%BCrg-hersche-b3481a44/"><i class="bi bi-linkedin"></i></a>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerLinksTitle}">Useful Links</h4>
+					<ul>
+						<li><a th:text="${footerLinksHome}" href="./../index.html">Home</a></li>
+						<li><a th:text="${footerLinksAbout}" href="#">About us</a></li>
+						<li><a th:text="${footerLinksServices}" href="./services.html">Services</a></li>
+						<li><a th:text="${footerLinksBlog}" href="./../blog/blog.html">Blog</a></li>
+						<li><a th:text="${footerLinksTerms}" href="#">Terms of service</a></li>
+						<li><a th:text="${footerLinksPrivacy}" href="#">Privacy policy</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerServicesTitle}">Our Services</h4>
+					<ul>
+						<li><a th:text="${footerServicesCertificate}" href="./services-certificate.html">Investigate certicate</a></li>
+						<li><a th:text="${footerServicesTxtChat}" href="./services-txtchat.html">Online-Chat (STOMP)</a></li>
+						<li><a th:text="${footerServicesDng2jpg}" href="./services-dng2jpg.html">RAW &amp; DNG to JPEG (single)</a></li>
+						<li><a th:text="${footerServicesAll2jpg}" href="./services-all2jpg.html">RAW &amp; DNG to JPEG (bulk)</a></li>
+						<li><a th:text="${footerServicesWhatsApp}" href="./services-timeline.html">Update WhatsApp image</a></li>
+						<li><a th:text="${footerServicesLightbox}" href="./services-lightbox.html">Image summary (lightbox)</a></li>
+						<li><a th:text="${footerServicesDoc4Ocr}" href="./services-doc4ocr.html">OCR for documents</a></li>
+						<li><a th:text="${footerServicesOpenApi}" href="./services-openapi.html">OpenAPI</a></li>
+						<li><a th:text="${footerServicesActuator}" href="./services-actuator.html">Actuator</a></li>
+						<li><a th:text="${footerServicesHawtio}" href="./services-hawtio.html">Hawtio web console</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerProjectsTitle}">Our projects</h4>
+					<ul>
+						<li><a th:text="${footerProjectsOnlyfans}" href="./../projects/projects-onlyfans.html">Project 'OnlyFans client'</a></li>
+						<li><a th:text="${footerProjectsLdapmgmt}" href="./../projects/projects-ldapmgmt.html">Project 'AD/DC Mgmt LDAP'</a></li>
+						<li><a href="#">Suscipit distinctio</a></li>
+						<li><a href="#">Dilecta</a></li>
+						<li><a href="#">Sit quas consectetur</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-2 col-md-3 footer-links">
+					<h4 th:text="${footerDevelopmentTitle}">Our developments</h4>
+					<ul>
+						<li><a th:text="${footerDevelopmentCalendar}" href="./../development/development-calendar.html">Calendar</a></li>
+						<li><a th:text="${footerDevelopmentRestApi}" href="./../development/development-restapi.html">Rest API</a></li>
+						<li><a th:text="${footerDevelopmentScenario}" href="./../development/development-timer.html">Scenario</a></li>
+						<li><a href="#">Trodelas</a></li>
+						<li><a href="#">Flexo</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container copyright text-center mt-4">
+			<p th:utext="${copyright}">© <span>Copyright</span> <strong class="px-1 sitename">Green@rt</strong> <span>All Rights Reserved</span></p>
+			<div class="credits">
+				<!-- All the links in the footer should remain intact. -->
+				<!-- You can delete the links only if you've purchased the pro version. -->
+				<!-- Licensing information: https://bootstrapmade.com/license/ -->
+				<!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+			</div>
+		</div>
+
+	</footer>
+
+	<!-- Scroll Top -->
+	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Preloader -->
+	<div id="preloader"></div>
+
+	<!-- Vendor JS Files -->
+	<script src="./../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="./../vendor/aos/aos.js"></script>
+	<script src="./../vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="./../vendor/swiper/swiper-bundle.min.js"></script>
+
+	<!-- Simple JS Files -->
+	<script src="./../js/imagesloaded.min.js"></script>
+	<script src="./../js/isotope.min.js"></script>
+	<script src="./../js/purecounter.min.js"></script>
+
+	<!-- Main JS File -->
+	<script src="./../js/main.js" defer="defer"></script>
+
+</body>
+
+</html>

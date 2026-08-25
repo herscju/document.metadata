@@ -1,0 +1,14 @@
+${Ansi.DEFAULT}
+${Ansi.DEFAULT}
+${Ansi.CYAN}    ________                                    _____            __   
+${Ansi.CYAN}   /  _____/ _______   ____    ____    ____    / ___ \ _______ _/  |_ 
+${Ansi.CYAN}  /   \  ___ \_  __ \_/ __ \ _/ __ \  /    \  / / ._\ \\_  __ \\   __\
+${Ansi.CYAN}  \    \_\  \ |  | \/\  ___/ \  ___/ |   |  \<  \_____/ |  | \/ |  |  
+${Ansi.CYAN}   \______  / |__|    \___  > \___  >|___|  / \_____\   |__|    |__|  
+${Ansi.CYAN}          \/              \/      \/      \/                          
+${Ansi.DEFAULT}
+${Ansi.DEFAULT}
+${Ansi.YELLOW}              Green@rt :: ${application.title}
+${Ansi.YELLOW}       Jürg Hersche (juerg.hersche [at] bluewin.ch)
+${Ansi.GREEN}               powered by  ::  Spring Boot ${spring-boot.formatted-version}
+${Ansi.DEFAULT}

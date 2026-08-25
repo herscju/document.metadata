@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" scan="true">
+	<Properties>
+		<!--<Property name="BASE_PATH">${log4j2.logfile.pathname}</Property> -->
+		<Property name="BASE_PATH">./logs/application</Property>
+		<Property name="LOG_LEVEL">%5p</Property>
+		<Property name="LOG_DATEFORMAT_CONSOLE">dd.MM.yyyy HH:mm:ss</Property>
+		<Property name="LOG_DATEFORMAT_LOGFILE">dd.MM.yyyy HH:mm:ss.SSS</Property>
+		<Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+		<Property name="CONSOLE_PATTERN">%clr{%d{${LOG_DATEFORMAT_CONSOLE}}}{faint}	%clr{${LOG_LEVEL}} %clr{%pid}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %msg%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+		<Property name="LOGFILE_PATTERN">%clr{%d{${LOG_DATEFORMAT_LOGFILE}}} %clr{${LOG_LEVEL}} %clr{%pid} %clr{---} %clr{[%15.15t]} %clr{%-60.60c{1.}} %clr{#%-4L} %clr{:} %msg%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+	</Properties>
+	<Appenders>
+		<File name="LOGFILE" fileName="${BASE_PATH}\metadata.log" immediateFlush="${log4j2.logfile.immediateFlush}" append="${log4j2.logfile.append}">
+			<PatternLayout pattern="${LOGFILE_PATTERN}" />
+		</File>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<!--<ThresholdFilter level="${log4j2.console.thresholdFilter}" onMatch="ACCEPT" onMismatch="DENY" /> -->
+			<ThresholdFilter level="ALL" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout pattern="${CONSOLE_PATTERN}" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<!--<Logger name="info.hersche.document.metadata" level="${log4j2.info.hersche.document.metadata}"></Logger> -->
+		
+		<Logger name="info.hersche.document.metadata" level="ALL"></Logger> <!-- Default: ALL -->
+		<Logger name="info.hersche.document.metadata.MetaDataApplication" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.api.AbstractController" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.api.websocket.PushController" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.certificate.CertificateLoader" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.client.StompClient" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.configuration.SecurityConfiguration" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.configuration.WebSocketSendToUserConfiguration" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.controller.FaultController" level="TRACE"></Logger> <!-- Default: TRACE -->
+		<Logger name="info.hersche.document.metadata.controller.MainController" level="INFO"></Logger> <!-- Default: INFO -->
+		<Logger name="info.hersche.document.metadata.controller.PageController" level="INFO"></Logger> <!-- Default: INFO -->
+		<Logger name="info.hersche.document.metadata.filter.ExceptionHandlerFilter" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.handler.ProcessorStompSessionHandler" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.image.GifPicture" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.image.JpegPicture" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.image.Mp4Movie" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.image.PngPicture" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.image.RenderPolicy" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.image.SvgPicture" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.image.WebPicture" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.listener.CustomCacheEventListener" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.listener.ReceiveImageListener" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.metadata.AbstractDirectory" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.processor.MetaDataWriter" level="ALL"></Logger> <!-- Default: xxx -->
+		<Logger name="info.hersche.document.metadata.processor.Mp4Processor" level="ALL"></Logger> <!-- Default: xxx -->
+		<Logger name="info.hersche.document.metadata.processor.UpdateFileImageMetaDataProcessor" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.processor.UpdateMemoryImageMetaDataProcessor" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.storage.FileSystemDownloadStorageService" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.storage.FileSystemUploadStorageService" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="info.hersche.document.metadata.storage.JmsConsumer" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.storage.JmsDocumentProducer" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.storage.JmsLightBoxProducer" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.storage.JmsStandardProducer" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+		<Logger name="info.hersche.document.metadata.storage.JmsWhatsAppProducer" level="DEBUG"></Logger> <!-- Default: DEBUG -->
+
+		<Logger name="io.netty.util.IllegalReferenceCountException" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="waffle.servlet.NegotiateSecurityFilter" level="OFF"></Logger> <!-- Default: OFF -->
+		<Logger name="waffle.spring.WindowsAuthenticationProvider" level="ALL"></Logger> <!-- Default: xxx -->
+
+		<Root level="INFO">
+			<AppenderRef ref="CONSOLE" />
+			<AppenderRef ref="LOGFILE" />
+		</Root>
+	</Loggers>
+</Configuration>
